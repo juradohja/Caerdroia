@@ -1,21 +1,19 @@
-public class Heroe{
+public class Enemigo{
 	private String nombre;
 	private int vida;
 	private int fuerza;
 	private int magia;
 	private int resistencia;
 	private int inteligencia;
-	private int exp;
 	private double iniciativa;
 
-	Heroe(String nombre, int vida, int fuerza, int magia, int resistencia int inteligencia, int exp, double iniciativa){
+	Enemigo(String nombre, int vida, int fuerza, int magia, int resistencia int inteligencia, double iniciativa){
 		this.nombre=nombre;
 		this.vida=vida;
 		this.fuerza=fuerza;
 		this.magia=magia;
 		this.resistencia=resistencia;
 		this.inteligencia=inteligencia;
-		this.exp=exp;
 	}
 
 	public String getNombre(){
@@ -55,13 +53,6 @@ public class Heroe{
 	}
 	public void setInteligencia(int resistencia){
 		this.inteligencia=inteligencia;
-	}
-
-	public int getExp(){
-		return exp;
-	}
-	public void setExp(int exp){
-		this.exp=exp;
 	}
 
 	public double getIniciativa(){
