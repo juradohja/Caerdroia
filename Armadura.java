@@ -1,3 +1,3 @@
-public class Armadura;{
+public class Armadura{
 	
 }
