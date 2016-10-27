@@ -1,9 +1,9 @@
-public class Arma{
+public class Arma extends Equipo{
 	private String nombre;
 	private int fuerza;
 	private int magia;
 
-	Arma(String nombre, int fuerza, int magia){
+	public Arma(String nombre, int fuerza, int magia){
 		this.nombre=nombre;
 		this.fuerza=fuerza;
 		this.magia=magia;

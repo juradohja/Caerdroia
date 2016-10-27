@@ -1,11 +1,11 @@
-public class Accesorio{
+public class Accesorio extends Equipo{
 	private String nombre;
 	private int modfuerza;
 	private int modmagia;
 	private int modresistencia;
 	private int modinteligencia;
 
-	Accesorio(String nombre, int modfuerza, int modprotected , int modresistencia, int modinteligencia){
+	public Accesorio(String nombre, int modfuerza, int modprotected , int modresistencia, int modinteligencia){
 		this.nombre=nombre;
 		this.modfuerza=modfuerza;
 		this.modmagia=modmagia;

@@ -1,9 +1,9 @@
-public class Armadura{
+public class Peto extends Equipo{
 	private String nombre;
 	private int resistencia;
 	private int inteligencia;
 
-	Armadura(String nombre, int resistencia, int inteligencia){
+	public Peto(String nombre, int resistencia, int inteligencia){
 		this.nombre=nombre;
 		this.resistencia=resistencia;
 		this.inteligencia=inteligencia;
