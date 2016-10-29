@@ -11,7 +11,7 @@ public class Personaje{
 	private Bolsa bolsa;
 
 	public Personaje(String nombre, int vida, int fuerza, int magia, int resistencia, int inteligencia, int iniciativa,
-			int experiencia, int nivel, Bolsa bolsa) {
+		int experiencia, int nivel, Bolsa bolsa) {
 		this.nombre = nombre;
 		this.vida = vida;
 		this.fuerza = fuerza;

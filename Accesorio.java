@@ -1,35 +1,7 @@
 public class Accesorio extends Equipo{
-	private String nombre;
-	private int modfuerza;
-	private int modmagia;
-	private int modresistencia;
-	private int modinteligencia;
-
-	public Accesorio(String nombre, int modfuerza, int modprotected , int modresistencia, int modinteligencia){
-		this.nombre=nombre;
-		this.modfuerza=modfuerza;
-		this.modmagia=modmagia;
-		this.modresistencia=modresistencia;
-		this.modinteligencia=modinteligencia;
+	
+	public Accesorio(String nombre, int fuerza, int magia, int resistencia, int inteligencia){
+		super(nombre, fuerza, magia, resistencia, inteligencia);
 	}
 
-	public String getNombre(){
-		return nombre;
-	}
-
-	public int getModfuerza(){
-		return modfuerza;
-	}
-
-	public int getModmagia(){
-		return modmagia;
-	}
-
-	public int getModresistencia(){
-		return modresistencia;
-	}
-
-	public int getModinteligencia(){
-		return modinteligencia;
-	}
 }
