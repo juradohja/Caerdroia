@@ -6,4 +6,9 @@ public class Alquimista extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Alquimista(int nivel){
+		inteligencia = 3*nivel;
+		// Terminar, hacer lo mismo para el resto de los personajes 
+	}
+
 }

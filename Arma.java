@@ -1,12 +1,14 @@
+import java.util.Random; // implementar random para todos
+
 public class Arma extends Equipo{
 	private String nombre;
 	private int fuerza;
 	private int magia;
+	private Random random;
 
-	public Arma(String nombre, int fuerza, int magia){
-		this.nombre=nombre;
-		this.fuerza=fuerza;
-		this.magia=magia;
+	public Arma(){
+		random = new Random();
+		setAttributes(random.nextInt()); // número de armas que hay
 	}
 
 	public String getNombre(){
@@ -19,5 +21,16 @@ public class Arma extends Equipo{
 
 	public int getMagia(){
 		return magia;
+	}
+
+	private void setAttributes(int tipo){
+		switch(tipo){
+			case 0:
+			nombre = "Martillo";
+			fuerza = 50;
+			break;
+
+			//completar
+		}
 	}
 }

@@ -1,23 +1,38 @@
+// Pocion chica (50) - 0
+// Pocion mediana (150) - 1
+// Pocion grande (300) - 2
+
 public class Pocion{
 
 	private String nombre;
 	private int vida;
 
-	public Pocion(String nombre, int vida){
-		this.nombre=nombre;
-		thisvida=vida;
+	public Pocion(int nivel){
+		initPotion(nivel);
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+
 	public int getVida() {
 		return vida;
 	}
-	public void setVida(int vida) {
-		this.vida = vida;
+
+	private void initPotion(nivel){
+		switch(nivel){
+			case 0:
+			nombre = "Poción chica";
+			vida = 50;
+			break;
+			case 1:
+			nombre = "Poción mediana";
+			vida = 150;
+			break;
+			case 2:
+			nombre = "Poción grande";
+			vida = 300;
+			break;
+		}
 	}
 }

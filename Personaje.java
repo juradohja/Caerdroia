@@ -1,3 +1,9 @@
+// Alquimista - 0
+// Caballero - 1
+// Cazador - 2
+// Necromancer - 3
+// Jefe - 4
+
 public class Personaje{
 	private String nombre;
 	private int vida;

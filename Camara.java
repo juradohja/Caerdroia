@@ -1,3 +1,10 @@
+// Paredes
+// 0 - Pared
+// 1 - Cerrado
+// 2 - Abierto
+
+import java.util.Random;
+
 public class Camara{
 
 	private Personaje enemigo;
@@ -11,13 +18,13 @@ public class Camara{
 	private String acertijo;
 	private String respuesta;
 	private int nivel;
+	private Random random;
 	
-	public Camara(Personaje enemigo, Equipo equipo, Pocion pocion, Llave llave, int up, int down, int left, int right,
-			String acertijo, String respuesta, int nivel) {
-		this.enemigo = enemigo;
-		this.equipo = equipo;
-		this.pocion = pocion;
-		this.llave = llave;
+	public Camara(int tipoEnemigo, int nivelEnemigo, int tipoEquipo, int tipoPocion, int claveLlave, int up, int down, int left, int right, String acertijo, String respuesta, int nivel) {
+		setEnemigo(tipoEnemigo, nivelEnemigo);
+		setEquipo(tipoEquipo);
+		setPocion(tipoPocion);
+		setLlave(claveLlave);
 		this.up = up;
 		this.down = down;
 		this.left = left;
@@ -31,39 +38,79 @@ public class Camara{
 		return enemigo;
 	}
 
-	public void setEnemigo(Personaje enemigo) {
-		this.enemigo = enemigo;
+	private void setEnemigo(int tipoEnemigo, int nivelEnemigo) {
+		switch(tipoEnemigo){
+			case 0:
+			enemigo = new Alquimista(nivelEnemigo);
+			break;
+
+			case 1:
+			enemigo = new Caballero(nivelEnemigo);
+			break;
+
+			case 2:
+			enemigo = new Cazador(nivelEnemigo);
+			break;
+
+			case 3:
+			enemigo = new Necromancer(nivelEnemigo);
+			break;
+
+			case 4:
+			enemigo = new Jefe();
+			break;
+		}
 	}
 
 	public Equipo getEquipo() {
 		return equipo;
 	}
 
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
+	private void setEquipo(int tipoEquipo) {
+		switch(tipoEquipo){
+			case 0:
+			equipo = new Accesorio();
+			break;
+
+			case 1:
+			equipo = new Arma();
+			break;
+
+			case 2:
+			equipo = new Botas();
+			break;
+
+			case 3:
+			equipo = new Casco();
+			break;
+
+			case 4:
+			equipo = new Peto();
+			break;
+		}
 	}
 
 	public Pocion getPocion() {
 		return pocion;
 	}
 
-	public void setPocion(Pocion pocion) {
-		this.pocion = pocion;
+	private void setPocion(int tipoPocion) {
+		pocion = new Pocion(tipoPocion);
 	}
 
 	public Llave getLlave() {
 		return llave;
 	}
 
-	public void setLlave(Llave llave) {
-		this.llave = llave;
+	private void setLlave(claveLlave) {
+		llave = new Llave(claveLlave);
 	}
 
 	public int getUp() {
 		return up;
 	}
 
-	public void setUp(int up) {
+	private void setUp(int up) {
 		this.up = up;
 	}
 
@@ -71,7 +118,7 @@ public class Camara{
 		return down;
 	}
 
-	public void setDown(int down) {
+	private void setDown(int down) {
 		this.down = down;
 	}
 
@@ -79,7 +126,7 @@ public class Camara{
 		return left;
 	}
 
-	public void setLeft(int left) {
+	private void setLeft(int left) {
 		this.left = left;
 	}
 
@@ -87,7 +134,7 @@ public class Camara{
 		return right;
 	}
 
-	public void setRight(int right) {
+	private void setRight(int right) {
 		this.right = right;
 	}
 
@@ -95,7 +142,7 @@ public class Camara{
 		return acertijo;
 	}
 
-	public void setAcertijo(String acertijo) {
+	private void setAcertijo(String acertijo) {
 		this.acertijo = acertijo;
 	}
 
@@ -103,7 +150,7 @@ public class Camara{
 		return respuesta;
 	}
 
-	public void setRespuesta(String respuesta) {
+	private void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
 
@@ -111,7 +158,7 @@ public class Camara{
 		return nivel;
 	}
 
-	public void setNivel(int nivel) {
+	private void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
 

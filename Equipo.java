@@ -1,3 +1,9 @@
+// Accesorio - 0
+// Arma - 1
+// Botas - 2
+// Casco - 3
+// Peto - 4
+
 public class Equipo{
 
 	private String nombre;
