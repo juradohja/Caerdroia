@@ -7,8 +7,11 @@ public class Alquimista extends Personaje{
 	}
 
 	public Alquimista(int nivel){
-		inteligencia = 3*nivel;
-		// Terminar, hacer lo mismo para el resto de los personajes 
+		vida = 85*nivel;
+		fuerza = 10*nivel;
+		magia = 12*nivel;
+		resistencia = 4*nivel;
+		inteligencia = 5*nivel;
+		iniciativa = 6*nivel;
 	}
-
 }
