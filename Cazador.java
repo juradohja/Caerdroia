@@ -6,4 +6,12 @@ public class Cazador extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Cazador(int nivel){
+		vida = 65*nivel;
+		fuerza = 16*nivel;
+		magia = 7*nivel;
+		resistencia = 4*nivel;
+		inteligencia = 3*nivel;
+		iniciativa = 10*nivel;
+	}
 }
