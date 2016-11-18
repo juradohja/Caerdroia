@@ -21,11 +21,15 @@ public class Combate{
 		this.enemigo = enemigo;
 	}
 	
-	public void atacaHeroe(){
-		
+	public void atacaHeroeHabilidad(){
+		enemigo.setVida(enemigo.getVida-(""+heroe.getFuerza+heroe.getMagia+heroe.get"FuerzaHabilidad"+heroe.get"MagiaHabilidad"-heroe.getResistencia-heroe.getInteligencia));
+	}
+	
+	public void atacaHeroeArma(){
+		enemigo.setVida(enemigo.getVida-())
 	}
 	
 	public void atacaEnemigo(){
-		
+		heroe.setVida(heroe.getVida-(""+enemigo.getFuerza+enemigo.getMagia+enemigo.get"FuerzaHabilidad"+enemigo.get"MagiaHabilidad"-enemigo.getResistencia-enemigo.getInteligencia));
 	}
 }
