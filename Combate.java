@@ -21,4 +21,11 @@ public class Combate{
 		this.enemigo = enemigo;
 	}
 	
+	public void atacaHeroe(){
+		
+	}
+	
+	public void atacaEnemigo(){
+		
+	}
 }
