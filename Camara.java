@@ -19,6 +19,7 @@ public class Camara{
 	private String respuesta;
 	private int nivel;
 	private Random random;
+	private boolean entered;
 	
 	public Camara(int tipoEnemigo, int nivelEnemigo, int tipoEquipo, int tipoPocion, int claveLlave, int up, int down, int left, int right, String acertijo, String respuesta, int nivel) {
 		setEnemigo(tipoEnemigo, nivelEnemigo);
@@ -32,6 +33,7 @@ public class Camara{
 		this.acertijo = acertijo;
 		this.respuesta = respuesta;
 		this.nivel = nivel;
+		entered = false;
 	}
 
 	public Personaje getEnemigo() {
