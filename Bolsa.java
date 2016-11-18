@@ -7,7 +7,7 @@ public class Bolsa{
 	Llave llave;
 	Pocion[5] pociones;
 
-	public Bolsa(Arma arma, Casco casco, Botas botas, Peto peto, Accesorio accesorio, Llave llave) {
+	public Bolsa() {
 		this.arma = arma;
 		this.casco = casco;
 		this.botas = botas;
