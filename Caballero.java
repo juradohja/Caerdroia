@@ -6,4 +6,8 @@ public class Caballero extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Caballero(int nivel){
+		super(nivel);
+	}
+
 }

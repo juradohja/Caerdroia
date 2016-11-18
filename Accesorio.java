@@ -4,4 +4,8 @@ public class Accesorio extends Equipo{
 		super(nombre, fuerza, magia, resistencia, inteligencia);
 	}
 
+	public Accesorio(){
+		
+	}
+
 }

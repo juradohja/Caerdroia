@@ -59,7 +59,7 @@ public class Camara{
 			break;
 
 			case 4:
-			enemigo = new Jefe();
+			enemigo = new Jefe(nivelEnemigo);
 			break;
 		}
 	}
@@ -104,7 +104,7 @@ public class Camara{
 		return llave;
 	}
 
-	private void setLlave(claveLlave) {
+	private void setLlave(int claveLlave) {
 		llave = new Llave(claveLlave);
 	}
 

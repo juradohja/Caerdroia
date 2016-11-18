@@ -6,4 +6,8 @@ public class Cazador extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Cazador(int nivel){
+		super(nivel);
+	}
+
 }

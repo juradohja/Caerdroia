@@ -4,5 +4,8 @@ public class Botas extends Equipo{
 		super(nombre, fuerza, magia, resistencia, inteligencia);
 	}
 
+	public Botas(){
+		
+	}
 
 }

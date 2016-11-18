@@ -4,4 +4,8 @@ public class Casco extends Equipo {
 		super(nombre, fuerza, magia, resistencia, inteligencia);
 	}
 
+	public Casco(){
+		
+	}
+
 }

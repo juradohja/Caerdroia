@@ -6,11 +6,11 @@
 
 public class Equipo{
 
-	private String nombre;
-	private int fuerza;
-	private int magia;
-	private int resistencia;
-	private int inteligencia;
+	protected String nombre;
+	protected int fuerza;
+	protected int magia;
+	protected int resistencia;
+	protected int inteligencia;
 
 	public Equipo(String nombre, int fuerza, int magia, int resistencia, int inteligencia) {
 		this.nombre = nombre;
@@ -18,6 +18,10 @@ public class Equipo{
 		this.magia = magia;
 		this.resistencia = resistencia;
 		this.inteligencia = inteligencia;
+	}
+
+	public Equipo(){
+		
 	}
 	
 	public String getNombre() {

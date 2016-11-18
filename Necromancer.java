@@ -6,4 +6,8 @@ public class Necromancer extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Necromancer(int nivel){
+		super(nivel);
+	}
+
 }

@@ -19,7 +19,7 @@ public class Pocion{
 		return vida;
 	}
 
-	private void initPotion(nivel){
+	private void initPotion(int nivel){
 		switch(nivel){
 			case 0:
 			nombre = "Poción chica";
