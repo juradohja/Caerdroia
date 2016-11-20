@@ -4,24 +4,32 @@
 // Casco - 3
 // Peto - 4
 
-public class Equipo{
+import java.util.Random;
 
+public abstract class Equipo{
+ 
 	protected String nombre;
 	protected int fuerza;
 	protected int magia;
 	protected int resistencia;
 	protected int inteligencia;
+	protected Random random;
 
-	public Equipo(String nombre, int fuerza, int magia, int resistencia, int inteligencia) {
+/*	public Equipo(String nombre, int fuerza, int magia, int resistencia, int inteligencia) {
 		this.nombre = nombre;
 		this.fuerza = fuerza;
 		this.magia = magia;
 		this.resistencia = resistencia;
 		this.inteligencia = inteligencia;
 	}
-
-	public Equipo(){
-		
+*/
+	public Equipo(boolean starter){
+		random = new Random();
+		if(starter=true){
+			setAttributes(0);
+		} else {
+			setAttributes(random.nextInt()); // número de armas que hay
+		}
 	}
 	
 	public String getNombre() {
@@ -54,4 +62,6 @@ public class Equipo{
 	public void setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
 	}
+
+	public abstract void setAttributes();
 }

@@ -18,7 +18,8 @@ public class Personaje{
 	protected Bolsa bolsa;
 
 	public Personaje(String nombre, int vida, int fuerza, int magia, int resistencia, int inteligencia, int iniciativa,
-		int experiencia, int nivel, Bolsa bolsa) {
+		int experiencia, int nivel) {
+		bolsa = new Bolsa();
 		this.nombre = nombre;
 		this.vida = vida;
 		this.fuerza = fuerza;
@@ -28,12 +29,15 @@ public class Personaje{
 		this.iniciativa = iniciativa;
 		this.experiencia = experiencia;
 		this.nivel = nivel;
-		this.bolsa = bolsa;
 	}
 
 	public Personaje(int nivel){
+		this.vida = nivel;
+		this.fuerza = nivel;
+		this.magia = nivel;
+		this.resistencia = nivel;
 		this.inteligencia = nivel;
-		// completar
+		this.iniciativa = nivel;
 	}
 
 	public String getNombre() {

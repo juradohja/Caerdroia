@@ -10,6 +10,12 @@ public class Bolsa{
 
 	public Bolsa() {
 		pociones = new Pocion[5];
+		this.arma = new Arma(true);
+		this.casco = new Casco(true);
+		this.botas = new Botas(true);
+		this.peto = new Peto(true);
+		this.accesorio = new Accesorio(true);
+	//	this.llave = llave;
 	}
 	public Arma getArma() {
 		return arma;
