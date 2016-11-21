@@ -9,7 +9,7 @@ public class Ventana extends JFrame{
 	private JButton up, down, left, right;
 	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion;
 
-	public Ventana(Mapa mapa){
+	public Ventana(Mapa m){
 		x = mapa.getPosicionX();
 		y = mapa.getPosicionY();
 		setTitle("Caerdroia");
