@@ -1,19 +1,21 @@
 public class Bolsa{
-	Arma arma;
-	Casco casco;
-	Botas botas;
-	Peto peto;
-	Accesorio accesorio;
-	Llave llave;
-	Pocion[5] pociones;
+	
+	private Arma arma;
+	private Casco casco;
+	private Botas botas;
+	private Peto peto;
+	private Accesorio accesorio;
+	private Llave llave;
+	private Pocion[] pociones;
 
 	public Bolsa() {
-		this.arma = arma;
-		this.casco = casco;
-		this.botas = botas;
-		this.peto = peto;
-		this.accesorio = accesorio;
-		this.llave = llave;
+		pociones = new Pocion[5];
+		this.arma = new Arma(true);
+		this.casco = new Casco(true);
+		this.botas = new Botas(true);
+		this.peto = new Peto(true);
+		this.accesorio = new Accesorio(true);
+	//	this.llave = llave;
 	}
 	public Arma getArma() {
 		return arma;

@@ -6,4 +6,8 @@ public class Jefe extends Personaje{
 		experiencia, nivel, bolsa);
 	}
 
+	public Jefe(int nivel){
+		super(nivel);
+	}
+
 }
