@@ -3,7 +3,7 @@
 // Cazador - 2
 // Necromancer - 3
 // Jefe - 4
-
+ 
 public class Personaje{
 	
 	protected String nombre;

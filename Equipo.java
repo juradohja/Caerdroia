@@ -3,7 +3,7 @@
 // Botas - 2
 // Casco - 3
 // Peto - 4
-
+ 
 import java.util.Random;
 
 public abstract class Equipo{
@@ -14,6 +14,7 @@ public abstract class Equipo{
 	protected int resistencia;
 	protected int inteligencia;
 	protected Random random;
+	protected boolean starter;
 
 /*	public Equipo(String nombre, int fuerza, int magia, int resistencia, int inteligencia) {
 		this.nombre = nombre;
@@ -25,11 +26,7 @@ public abstract class Equipo{
 */
 	public Equipo(boolean starter){
 		random = new Random();
-		if(starter=true){
-			setAttributes(0);
-		} else {
-			setAttributes(random.nextInt()); // número de armas que hay
-		}
+		this.starter=starter;
 	}
 	
 	public String getNombre() {
@@ -63,5 +60,5 @@ public abstract class Equipo{
 		this.inteligencia = inteligencia;
 	}
 
-	public abstract void setAttributes();
+	protected abstract void setAttributes(int tipo);
 }

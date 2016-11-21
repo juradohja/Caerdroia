@@ -8,9 +8,14 @@ public class Peto extends Equipo{
 */
 	public Peto(boolean starter){
 		super(starter);
+		if(starter){
+			setAttributes(0);
+		} else {
+			setAttributes(random.nextInt()); // número de armas que hay
+		}
 	}
 
-	private void setAttributes(int tipo){
+	protected void setAttributes(int tipo){
 		
 	}
 

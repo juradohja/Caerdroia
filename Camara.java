@@ -71,23 +71,23 @@ public class Camara{
 	private void setEquipo(int tipoEquipo) {
 		switch(tipoEquipo){
 			case 0:
-			equipo = new Accesorio();
+			equipo = new Accesorio(false);
 			break;
 
 			case 1:
-			equipo = new Arma();
+			equipo = new Arma(false);
 			break;
 
 			case 2:
-			equipo = new Botas();
+			equipo = new Botas(false);
 			break;
 
 			case 3:
-			equipo = new Casco();
+			equipo = new Casco(false);
 			break;
 
 			case 4:
-			equipo = new Peto();
+			equipo = new Peto(false);
 			break;
 		}
 	}
