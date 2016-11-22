@@ -101,9 +101,9 @@ public class Ventana extends JFrame implements ActionListener{
 					celda.setText(m.getHeroe().getNombre());
 				}else{
 					if(m.getCamara(j,i).isEntered() == true){
-						celda.setText("Despejado");
-					}else{
 						celda.setText(" ");
+					}else{
+						celda.setText("?");
 					}
 				}
 				t =	changeNumber(m.getCamara(j,i).getUp());
