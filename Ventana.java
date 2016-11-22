@@ -19,18 +19,18 @@ public class Ventana extends JFrame implements ActionListener{
 		setSize(2000,2000);
 		setLayout(new GridLayout(2,2));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		initComponents(m);
+		initComponents();
 		setVisible(true);
 	}
 
-	public void initComponents(Mapa m){
+	public void initComponents(){
 		mapa = new JPanel();
 		mapa.setLayout(new GridLayout(5,5));
-		drawMap(mapa, m);
+		drawMap(mapa);
 		add(mapa);
 		datos = new JPanel();
 		datos.setLayout(new GridLayout(10,1));
-		drawInfo(datos, m);
+		drawInfo(datos);
 		add(datos);
 		botones = new JPanel();
 		botones.setLayout(new GridLayout(2,2));
@@ -57,7 +57,7 @@ public class Ventana extends JFrame implements ActionListener{
 		add(info);
 	}
 
-	public void drawInfo(JPanel datos, Mapa m){
+	public void drawInfo(JPanel datos){
 		nombre = new JLabel("Nombre: "+m.getHeroe().getNombre());
 		vida = new JLabel("Vida: "+m.getHeroe().getVida());
 		fuerza = new JLabel("Fuerza: "+m.getHeroe().getFuerza());
@@ -80,7 +80,7 @@ public class Ventana extends JFrame implements ActionListener{
 		datos.add(bolsa);
 	}
 
-	public void drawMap(JPanel mapa, Mapa m){
+	public void drawMap(JPanel mapa){
 		for(int i = 0; i<5; i++){
 			for(int j = 0; j<5; j++){
 				JLabel celda = new JLabel();
@@ -91,7 +91,7 @@ public class Ventana extends JFrame implements ActionListener{
 					if(m.getCamara(i,j).isEntered() == true){
 						celda.setText("Despejado");
 					}else{
-						celda.setText("No despejado");
+						celda.setText(" ");
 					}
 				}
 				t =	changeNumber(m.getCamara(i,j).getUp());
