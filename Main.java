@@ -1,11 +1,3 @@
-/*public class Main{
-	public static void main(String args[]){
-		Personaje heroe = new Caballero("Betosh", 1);
-		Mapa mapa = new Mapa(heroe);
-		Ventana v = new Ventana(mapa);
-	}
-}*/
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -66,6 +58,9 @@ public class Main extends JFrame implements ActionListener{
 			name = nombre.getText();
 			type = personajes.getSelectedIndex();
 			p = createHero(name, type);
+			Mapa m = new Mapa(p);
+			Ventana v = new Ventana(m);
+			dispose();
 			System.out.println(p.getNombre());
 			System.out.println(type);
 		}
