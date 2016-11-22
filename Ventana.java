@@ -98,7 +98,7 @@ public class Ventana extends JFrame implements ActionListener{
 				JLabel celda = new JLabel();
 				celda.setHorizontalAlignment(JLabel.CENTER);
 				if(i==y && x==j){
-					celda.setText("Héroe");
+					celda.setText(m.getHeroe().getNombre());
 				}else{
 					if(m.getCamara(j,i).isEntered() == true){
 						celda.setText("Despejado");
