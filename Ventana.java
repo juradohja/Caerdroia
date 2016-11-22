@@ -1,15 +1,18 @@
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Ventana extends JFrame{
+public class Ventana extends JFrame implements ActionListener{
 	private int x, y, t, l, b, r;
 	private MatteBorder border;
 	private JPanel botones, mapa, datos, info;
 	private JButton up, down, left, right;
 	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion;
+	private Mapa m;
 
 	public Ventana(Mapa m){
+		this.m = m;
 		x = m.getPosicionX();
 		y = m.getPosicionY();
 		setTitle("Caerdroia");
@@ -35,6 +38,14 @@ public class Ventana extends JFrame{
 		down = new JButton("Down");
 		left = new JButton("Left");
 		right = new JButton("Right");
+		up.setActionCommand("up");
+		down.setActionCommand("down");
+		left.setActionCommand("left");
+		right.setActionCommand("right");
+		up.addActionListener(this);
+		down.addActionListener(this);
+		left.addActionListener(this);
+		right.addActionListener(this);
 		botones.add(up);
 		botones.add(down);
 		botones.add(left);
@@ -93,6 +104,7 @@ public class Ventana extends JFrame{
 			}
 		}
 	}
+
 	 public int changeNumber(int num){
 	 	switch(num){
 	 		case 0:
@@ -105,4 +117,62 @@ public class Ventana extends JFrame{
 	 	return 0;
 	 }
 
+	 public void actionPerformed(ActionEvent e){
+	 	String wall = e.getActionCommand();
+	 	boolean move = false;
+	 	int w;
+	 	switch(wall){
+	 		case "up":
+	 			w = m.getCamara(x,y).getUp();
+	 			move = validateMove(w);
+	 			if (move == true){
+	 				y--;
+	 				m.setPosicionY(y);
+	 				System.out.println(x+","+y);
+	 			}
+	 			break;
+	 		case "down":
+	 			w = m.getCamara(x,y).getDown();
+	 			move = validateMove(w);
+	 			if (move == true){
+	 				y++;
+	 				m.setPosicionY(y);
+	 				System.out.println(x+","+y);
+	 			}
+	 			break;
+	 		case "left":
+	 			w = m.getCamara(x,y).getLeft();
+	 			move = validateMove(w);
+	 			if (move == true){
+	 				x--;
+	 				m.setPosicionX(x);
+	 				System.out.println(x+","+y);
+	 			}
+	 			break;
+	 		case "right":
+	 			w = m.getCamara(x,y).getRight();
+	 			move = validateMove(w);
+	 			if (move == true){
+	 				x++;
+	 				m.setPosicionX(x);
+	 				System.out.println(x+","+y);
+	 			}
+	 			break;
+	 	}
+	 }
+
+	 public boolean validateMove(int w){
+	 	switch(w){
+	 		case 0:
+	 			System.out.println("Es una pared wey");
+	 			return false;
+	 		case 1:
+	 			System.out.println("Tienes que saltar el muro");
+	 			return false;
+	 		case 2:
+	 			System.out.println("Pasales");
+	 			return true;
+	 	}
+	 	return  false;
+	 }
 }
