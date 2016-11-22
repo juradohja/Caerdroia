@@ -42,7 +42,7 @@ public class Botas extends Equipo{
 			break;
 				
 			case 4:
-			nombre= "Botas"
+			nombre= "Botas";
 			resistencia= 5;
 			inteligencia= 5;
 			break;
