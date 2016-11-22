@@ -30,50 +30,53 @@ public class Combate implements Serializable{
 		this.enemigo = enemigo;
 	}
 
-/*	
-	public void atacaHeroeHabilidad(){
-		enemigo.setVida(enemigo.getVida-(""+heroe.getFuerza()+heroe.getMagia()-heroe.getResistencia()-heroe.getInteligencia()));
-	}
-	
-	public void atacaHeroeArma(Personaje enemigo, Arma arma){
-		enemigo.setVida(enemigo.getVida-(heroe.getFuerza()+heroe.getMagia()+arma.getFuerza()+arma.getMagia()));
-	}
-	
-	public void atacaEnemigo(Personaje heroe){
-		heroe.setVida(heroe.getVida-(enemigo.getFuerza()+enemigo.getMagia()-enemigo.getResistencia()-enemigo.getInteligencia()));
-	}
-*/
 	public Personaje entrarEnCombate(){
 		boolean turnoHeroe=true;
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
 			if(turnoHeroe){
-				System.out.println("Turno heroe");
+				System.out.println("Turno héroe");
+				String hf = heroe.getHFisica().getNombre();
+				String hm = heroe.getHMagica().getNombre();
+				String ar = "Usar "+heroe.getBolsa().getArma().getNombre();
+				String sa = "Sanar";
 				// ¿Qué quieres hacer?
-				int accionHeroe=random.nextInt(2);
+				String[] accionHeroeOpciones = {"HF", "HM", "A", "S"};
+				Object aH=JOptionPane.showInputDialog(null, "Es tu turno, ¿qué quieres hacer? HF: "+hf+". HM: "+hm+". A: "+ar+". S: "+sa+".", null, JOptionPane.INFORMATION_MESSAGE, null, accionHeroeOpciones, accionHeroeOpciones[0]);
+				String accionHeroe = (String) aH;
 					// Habilidad
 						// Físico
 						// Magia
 					// Arma
 					// Curar
 				switch(accionHeroe){
-					case 0: // Habilidad física
+					case "HF": // Habilidad física
 					double dhf = ((heroe.getHFisica().getFuerza())+(heroe.getFuerza()*0.5)-enemigo.getResistencia());
 					int hfatk = (int) dhf;
 					if(hfatk>0){
 						enemigo.setVida(enemigo.getVida()-hfatk);
+						if(enemigo.getVida()>0){
+							JOptionPane.showMessageDialog(null, "Has bajado "+hfatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
+						} else {
+							JOptionPane.showMessageDialog(null, "Has bajado "+hfatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+						}
 					}
 					break;
 
-					case 1: // Habilidad mágica
+					case "HM": // Habilidad mágica
 					double dhm = ((heroe.getHMagica().getMagia())+(heroe.getMagia()*0.5)-enemigo.getInteligencia());
 					int hmatk = (int) dhm;
 					if(hmatk>0){
 						enemigo.setVida(enemigo.getVida()-hmatk);
+						if(enemigo.getVida()>0){
+							JOptionPane.showMessageDialog(null, "Has bajado "+hmatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
+						} else {
+							JOptionPane.showMessageDialog(null, "Has bajado "+hmatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+						}
 					}
 					break;
 
-					case 2: // Arma
+					case "A": // Arma
 					int af=heroe.getBolsa().getArma().getFuerza();
 					int am=heroe.getBolsa().getArma().getMagia();
 					int tota=af+am;
@@ -84,7 +87,7 @@ public class Combate implements Serializable{
 					}
 					break;
 
-					case 3: // Curar
+					case "S": // Curar
 					// Lista de pociones
 					int pocionElegida = 0; //
 					try {

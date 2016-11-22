@@ -197,7 +197,8 @@ public class Camara implements Serializable{
 		Personaje afterHeroe = heroe;
 		if(!entered){
 			// Mostrar acertijo
-			String res = JOptionPane.showInputDialog(acertijo);
+			String[] acertijoValues = {"Aceptar"};
+			String res = JOptionPane.showInputDialog(null, acertijo);
 			if(res.equals(respuesta)){
 				// Felicidades
 				JOptionPane.showMessageDialog(null, "Felicidades! Has acertado");
@@ -211,7 +212,6 @@ public class Camara implements Serializable{
 				return afterHeroe;
 			} else {
 				// Respuesta incorrecta
-
 				JOptionPane.showMessageDialog(null, "Tas tonto");
 				afterHeroe = iniciarCombate(heroe, enemigo);
 			}
