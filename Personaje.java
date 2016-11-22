@@ -23,7 +23,6 @@ public class Personaje{
 	public Personaje(String nombre, int nivel) {
 		bolsa = new Bolsa();
 		this.nombre = nombre;
-		this.experiencia = experiencia;
 		this.nivel = nivel;
 		this.vida = nivel;
 		this.fuerza = nivel;

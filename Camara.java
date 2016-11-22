@@ -173,4 +173,16 @@ public class Camara{
 		boolean heroIsAlive = combate.entrarEnCombate();
 		return heroIsAlive;
 	}
+/*
+	public void cicloCamara(){
+		if(!entered){
+			// Mostrar acertijo
+			// Recibir respuesta
+			String res=""; //input
+			if(res.equals(respuesta)){
+
+			}
+		}
+	}
+*/
 }
