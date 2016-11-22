@@ -47,8 +47,9 @@ public class Combate{
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
 			if(turnoHeroe){
+				System.out.println("Turno heroe");
 				// ¿Qué quieres hacer?
-				int accionHeroe=random.nextInt(4);
+				int accionHeroe=random.nextInt(2);
 					// Habilidad
 						// Físico
 						// Magia
@@ -106,6 +107,7 @@ public class Combate{
 					break;
 				}
 			} else {
+				System.out.println("Turno enemigo");
 				int accionEnemigo=random.nextInt(2);
 				switch(accionEnemigo){
 					case 0: // Habilidad física

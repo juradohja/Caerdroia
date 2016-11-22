@@ -17,7 +17,7 @@ public class Bolsa{
 		this.botas = new Botas(true);
 		this.peto = new Peto(true);
 		this.accesorio = new Accesorio(true);
-	//	this.llave = llave;
+		this.llave = new Llave(0);
 	}
 	public Arma getArma() {
 		return arma;

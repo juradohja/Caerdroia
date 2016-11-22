@@ -36,6 +36,7 @@ public class Camara{
 		this.respuesta = respuesta;
 		this.nivel = nivel;
 		entered = false;
+		random = new Random();
 	}
 
 	public Personaje getEnemigo() {
