@@ -8,7 +8,6 @@ public class Caballero extends Personaje{
 		magia = magia*10;
 		resistencia = resistencia*5;
 		inteligencia = inteligencia*4;
-		iniciativa = iniciativa*5;
 		hFisica = new Habilidad("Espada Sagrada", 65, 15);
 		hMagica = new Habilidad("Furia de Guerra", 30, 40);
 	}
@@ -21,7 +20,6 @@ public class Caballero extends Personaje{
 		magia = magia*10;
 		resistencia = resistencia*5;
 		inteligencia = inteligencia*4;
-		iniciativa = iniciativa*5;
 		hFisica = new Habilidad("Espada Sagrada", 65, 15);
 		hMagica = new Habilidad("Furia de Guerra", 30, 40);
 	}
