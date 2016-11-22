@@ -9,9 +9,9 @@ public class Casco extends Equipo {
 	public Casco(boolean starter){
 		super(starter);
 		if(starter){
-			setAttributes(0);
+			setAttributes(4);
 		} else {
-			setAttributes(random.nextInt(3)); // número de armas que hay
+			setAttributes(random.nextInt(4)); // número de armas que hay
 		}
 	}
 
@@ -19,26 +19,32 @@ public class Casco extends Equipo {
 		switch (tipo) {
 			case 0:
 			nombre= "Máscara";
-			resistencia= 5;
-			inteligencia= 5;
-			break;
-
-			case 1:
-			nombre= "Casco de Cuero";
 			resistencia= 10;
 			inteligencia= 10;
 			break;
 
-			case 2:
-			nombre= "Casco de Acero";
+			case 1:
+			nombre= "Casco de Cuero";
 			resistencia= 15;
 			inteligencia= 15;
 			break;
 
-			case 3:
-			nombre= "Sombrero Daedrico";
+			case 2:
+			nombre= "Casco de Acero";
 			resistencia= 20;
 			inteligencia= 20;
+			break;
+
+			case 3:
+			nombre= "Sombrero Daedrico";
+			resistencia= 25;
+			inteligencia= 25;
+			break;
+				
+			case 4:
+			nombre= "Gorra";
+			resistencia= 5;
+			inteligencia= 5;
 			break;
 		}
 	}
