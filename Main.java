@@ -65,15 +65,21 @@ public class Main extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 			name = nombre.getText();
 			type = personajes.getSelectedIndex();
-			p = 
+			p = createHero(name, type);
 			System.out.println(p.getNombre());
 			System.out.println(type);
 		}
 
-	public personaje createHero(int t){
+	public Personaje createHero(String n, int t){
 		switch(t){
 			case 0:
-				return new Cazador
+				return new Alquimista(n, 1);
+			case 1:
+				return new Caballero(n, 1);
+			case 2:
+				return new Cazador(n, 1);
+			case 3:
+				return new Necromancer(n, 1);
 		}
 		return null;
 	}
