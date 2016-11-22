@@ -85,19 +85,19 @@ public class Ventana extends JFrame implements ActionListener{
 			for(int j = 0; j<5; j++){
 				JLabel celda = new JLabel();
 				celda.setHorizontalAlignment(JLabel.CENTER);
-				if(i==x && y==j){
+				if(i==y && x==j){
 					celda.setText("Héroe");
 				}else{
-					if(m.getCamara(i,j).isEntered() == true){
+					if(m.getCamara(j,i).isEntered() == true){
 						celda.setText("Despejado");
 					}else{
 						celda.setText(" ");
 					}
 				}
-				t =	changeNumber(m.getCamara(i,j).getUp());
-				l =	changeNumber(m.getCamara(i,j).getLeft());
-				b =	changeNumber(m.getCamara(i,j).getDown());
-				r =	changeNumber(m.getCamara(i,j).getRight());
+				t =	changeNumber(m.getCamara(j,i).getUp());
+				l =	changeNumber(m.getCamara(j,i).getLeft());
+				b =	changeNumber(m.getCamara(j,i).getDown());
+				r =	changeNumber(m.getCamara(j,i).getRight());
 				border = BorderFactory.createMatteBorder(t,l,b,r, new Color(165,42,42));			
 				celda.setBorder(border);
 				mapa.add(celda);
@@ -128,6 +128,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 			if (move == true){
 	 				y--;
 	 				m.setPosicionY(y);
+	 				mapa.removeAll();
+	 				drawMap(mapa);
+	 				mapa.revalidate();
+	 				mapa.repaint();
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -137,6 +141,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 			if (move == true){
 	 				y++;
 	 				m.setPosicionY(y);
+	 				mapa.removeAll();
+	 				drawMap(mapa);
+	 				mapa.revalidate();
+	 				mapa.repaint();
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -146,6 +154,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 			if (move == true){
 	 				x--;
 	 				m.setPosicionX(x);
+	 				mapa.removeAll();
+	 				drawMap(mapa);
+	 				mapa.revalidate();
+	 				mapa.repaint();
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -155,6 +167,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 			if (move == true){
 	 				x++;
 	 				m.setPosicionX(x);
+	 				mapa.removeAll();
+	 				drawMap(mapa);
+	 				mapa.revalidate();
+	 				mapa.repaint();
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
