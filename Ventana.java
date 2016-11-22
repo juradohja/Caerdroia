@@ -18,7 +18,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 		x = m.getPosicionX();
 		y = m.getPosicionY();
 		setTitle("Caerdroia");
-		setSize(800,800);
+		setSize(700, 700);
 		setLayout(new GridLayout(2,2));
 		setUIFont (new javax.swing.plaf.FontUIResource("Arial",Font.PLAIN,18));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

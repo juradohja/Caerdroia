@@ -216,15 +216,22 @@ public class Camara implements Serializable{
 				afterHeroe = iniciarCombate(heroe, enemigo);
 			}
 			if(afterHeroe.getVida()>0){
-				// Felicidades
+				JOptionPane.showMessageDialog(null, "Has ganado el combate, tus atributos han aumentado.");
 				afterHeroe.setFuerza(heroe.getFuerza()+random.nextInt(8));
 				afterHeroe.setMagia(heroe.getMagia()+random.nextInt(8));
 				afterHeroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
 				afterHeroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
 				afterHeroe.setMaxVida(heroe.getMaxVida()+random.nextInt(16));
 				afterHeroe.setVida(heroe.getMaxVida());
-				// Has recibido equipo
-				boolean hasAcceptedEquipo = true;
+				String[] equipoOpciones = {"Aceptar", "Rechazar"};
+				Object eO=JOptionPane.showInputDialog(null, "Has encontrado: "+equipo.getNombre()+". ¿Deseas cambiarlo? (Reemplazará el objeto del mismo tipo)", null, JOptionPane.INFORMATION_MESSAGE, null, equipoOpciones, equipoOpciones[0]);
+				String decisionEquipo = (String) eO;
+				boolean hasAcceptedEquipo;
+				if(decisionEquipo.equals("Aceptar")){
+					hasAcceptedEquipo = true;
+				} else {
+					hasAcceptedEquipo = false;
+				}
 				if(hasAcceptedEquipo){
 					switch(tipoEquipo){
 						case 0:
@@ -253,16 +260,16 @@ public class Camara implements Serializable{
 						break;
 					}
 				}
-				if(llave.getNivel()!=0){
-					// Has conseguido la llave ##
-					afterHeroe.getBolsa().getLlave().setNivel(llave.getNivel());
-				}
 				if(afterHeroe.getBolsa().getNumeroPociones()<5){
-					// Has recibido esta poción
+					JOptionPane.showMessageDialog(null, "Has recibido una "+pocion.getNombre()+".");
 					afterHeroe.getBolsa().setPocion(pocion, afterHeroe.getBolsa().getNumeroPociones());
 					afterHeroe.getBolsa().setNumeroPociones(afterHeroe.getBolsa().getNumeroPociones()+1);
 				} else {
-					// No hay espacio en tu bolsa para otra poción
+					JOptionPane.showMessageDialog(null, "Has encontrado una "+pocion.getNombre()+". Lástima que no quepa en tu bolsa.");
+				}
+				if(llave.getNivel()!=0){
+					JOptionPane.showMessageDialog(null, "¡Has encontrado la llave #"+llave.getNivel()+"!");
+					afterHeroe.getBolsa().getLlave().setNivel(llave.getNivel());
 				}
 			}
 			entered=true;

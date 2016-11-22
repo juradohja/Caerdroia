@@ -102,13 +102,14 @@ public class Combate implements Serializable{
 					String p5 = heroe.getBolsa().getPocion(4).getNombre();
 					Object pE=JOptionPane.showInputDialog(null, "¿Qué poción quieres usar? 1: "+p1+". 2: "+p2+". 3: "+p3+". 4: "+p4+". 5: "+p5+".", null, JOptionPane.INFORMATION_MESSAGE, null, curacionOpciones, curacionOpciones[0]);
 					String peString = (String) pE;
-					int pocionElegida = Integer.parseInt(peString);
+					int pocionElegida = Integer.parseInt(peString)-1;
 					try {
+						int pvAnteriores = heroe.getVida();
       					heroe.setVida(heroe.getVida()+heroe.getBolsa().getPocion(pocionElegida).getVida());
     					if(heroe.getVida()>heroe.getMaxVida()){
     						heroe.setVida(heroe.getMaxVida());
     					}
-      					JOptionPane.showMessageDialog(null, "Has sanado "+heroe.getBolsa().getPocion(pocionElegida).getVida()+" PV. Ahora tienes "+heroe.getVida()+" PV.");
+      					JOptionPane.showMessageDialog(null, "Has sanado "+(heroe.getVida()-pvAnteriores)+" PV. Ahora tienes "+heroe.getVida()+" PV.");
       					if(pocionElegida < 4){
       						for(int i = pocionElegida; i<4; i++){
       							heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
