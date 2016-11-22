@@ -196,7 +196,12 @@ public class Ventana extends JFrame implements ActionListener{
 	 			return false;
 	 		case 1:
 	 			JOptionPane.showMessageDialog(null, "Puerta cerrada");
-	 			return false;
+	 			if(m.getCamara(x,y).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
+	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
+	 				return true;
+	 			}else{
+	 				return false;
+	 			}
 	 		case 2:
 	 			JOptionPane.showMessageDialog(null, "Has cambiado de cámara");
 	 			return true;
