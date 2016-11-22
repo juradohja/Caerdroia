@@ -9,9 +9,9 @@ public class Botas extends Equipo{
 	public Botas(boolean starter){
 		super(starter);
 		if(starter){
-			setAttributes(0);
+			setAttributes(4);
 		} else {
-			setAttributes(random.nextInt(3)); // número de armas que hay
+			setAttributes(random.nextInt(4)); // número de armas que hay
 		}
 	}
 
@@ -19,27 +19,30 @@ public class Botas extends Equipo{
 		switch (tipo) {
 			case 0:
 			nombre= "Chanclas";
-			resistencia= 5;
-			inteligencia= 5;
-			break;
-
-			case 1:
-			nombre= "Botas de piel";
 			resistencia= 10;
 			inteligencia= 10;
 			break;
 
-			case 2:
-			nombre= "Tenis";
+			case 1:
+			nombre= "Botas de piel";
 			resistencia= 15;
 			inteligencia= 15;
 			break;
 
-			case 3:
-			nombre= "Botas Metálicas";
+			case 2:
+			nombre= "Tenis";
 			resistencia= 20;
 			inteligencia= 20;
 			break;
+
+			case 3:
+			nombre= "Botas Metálicas";
+			resistencia= 25;
+			inteligencia= 25;
+			break;
+				
+			case 4:
+			nombre= 
 		}
 	}
 
