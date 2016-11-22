@@ -5,9 +5,9 @@ public class Arma extends Equipo{
 	public Arma(boolean starter){
 		super(starter);
 		if(starter){
-			setAttributes(0);
+			setAttributes(12);
 		} else {
-			setAttributes(random.nextInt()); // número de armas que hay
+			setAttributes(random.nextInt(12)); // número de armas que hay
 		}
 	}
 
@@ -83,6 +83,12 @@ public class Arma extends Equipo{
 			nombre = "Motosierra";
 			magia= 100;
 			fuerza= 0;
+			break;
+				
+			case 12:
+			nombre = "Tuberia";
+			magia= 5;
+			fuerza= 5;
 			break;
 		}
 	}
