@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Ventana extends JFrame implements ActionListener{
+public class Ventana extends JFrame implements ActionListener, Serializable{
 	private int x, y, t, l, b, r;
 	private MatteBorder border;
 	private JPanel botones, mapa, datos, info;

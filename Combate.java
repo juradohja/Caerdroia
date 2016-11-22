@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-public class Combate{
+public class Combate implements Serializable{
 	
 	private Personaje heroe;
 	private Personaje enemigo;

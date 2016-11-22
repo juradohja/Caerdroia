@@ -1,4 +1,6 @@
-public class Jefe extends Personaje{
+import java.io.Serializable;
+
+public class Jefe extends Personaje implements Serializable{
 
 	public Jefe(int nivel){
 		super(nivel);

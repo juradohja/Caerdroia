@@ -1,4 +1,5 @@
-public class Cazador extends Personaje{
+import java.io.Serializable;
+public class Cazador extends Personaje implements Serializable{
 
 	public Cazador(String nombre, int nivel){
 		super(nombre, nivel);

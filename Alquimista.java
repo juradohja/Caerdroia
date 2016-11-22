@@ -1,4 +1,6 @@
-public class Alquimista extends Personaje{
+import java.io.Serializable;
+
+public class Alquimista extends Personaje implements Serializable{
 
 	public Alquimista(String nombre, int nivel){
 		super(nombre, nivel);

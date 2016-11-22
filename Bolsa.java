@@ -1,4 +1,6 @@
-public class Bolsa{
+import java.io.Serializable;
+
+public class Bolsa implements Serializable{
 	
 	private Arma arma;
 	private Casco casco;

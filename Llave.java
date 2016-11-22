@@ -1,4 +1,6 @@
-public class Llave{
+import java.io.Serializable;
+
+public class Llave implements Serializable{
 
 	private int nivel;
 

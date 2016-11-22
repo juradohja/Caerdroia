@@ -3,8 +3,10 @@
 // Cazador - 2
 // Necromancer - 3
 // Jefe - 4
+
+import java.io.Serializable;
  
-public abstract class Personaje{
+public abstract class Personaje implements Serializable{
 	
 	protected String nombre;
 	protected int vida;

@@ -1,4 +1,5 @@
-public class Necromancer extends Personaje{
+import java.io.Serializable;
+public class Necromancer extends Personaje implements Serializable{
 
 	public Necromancer(String nombre, int nivel){
 		super(nombre, nivel);

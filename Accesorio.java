@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Random;
 
-public class Accesorio extends Equipo{
+public class Accesorio extends Equipo implements Serializable{
 /*
 	public Accesorio(String nombre, int fuerza, int magia, int resistencia, int inteligencia){
 		super(nombre, fuerza, magia, resistencia, inteligencia);

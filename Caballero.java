@@ -1,4 +1,5 @@
-public class Caballero extends Personaje{
+import java.io.Serializable;
+public class Caballero extends Personaje implements Serializable{
 
 	public Caballero(String nombre, int nivel){
 		super(nombre, nivel);

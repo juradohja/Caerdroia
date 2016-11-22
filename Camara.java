@@ -3,9 +3,10 @@
 // 1 - Cerrado
 // 2 - Abierto
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Camara{
+public class Camara implements Serializable{
 
 	private Personaje enemigo;
 	private String claseEnemigo;
@@ -35,7 +36,7 @@ public class Camara{
 		this.acertijo = acertijo;
 		this.respuesta = respuesta;
 		this.nivel = nivel;
-		if(nivel=1){
+		if(nivel==1){
 			entered = true;
 		} else {
 			entered = false;

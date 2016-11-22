@@ -4,9 +4,10 @@
 // Casco - 3
 // Peto - 4
  
+import java.io.Serializable;
 import java.util.Random;
 
-public abstract class Equipo{
+public abstract class Equipo implements Serializable{
  
 	protected String nombre;
 	protected int fuerza;

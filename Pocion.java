@@ -3,7 +3,9 @@
 // Pocion grande (300) - 2
 // Pocion vacia (0) - 3
 
-public class Pocion{
+import java.io.Serializable;
+
+public class Pocion implements Serializable{
 
 	private String nombre;
 	private int vida;

@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Main extends JFrame implements ActionListener{
+public class Main extends JFrame implements ActionListener, Serializable{
 	private JButton crear;
 	private JLabel nom, tit, create, tip;
 	private String[] characters = {"Alquimista","Caballero","Cazador","Necromancer"}; 

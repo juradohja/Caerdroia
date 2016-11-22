@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Random; // implementar random para todos
 
-public class Arma extends Equipo{
+public class Arma extends Equipo implements Serializable{
 
 	public Arma(boolean starter){
 		super(starter);
