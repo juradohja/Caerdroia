@@ -16,12 +16,13 @@ public class Personaje{
 	protected int experiencia;
 	protected int nivel;
 	protected Bolsa bolsa;
+	protected Habilidad hFisica;
+	protected Habilidad hMagica;
 
 	public Personaje(String nombre, int nivel) {
 		bolsa = new Bolsa();
 		this.nombre = nombre;
 		this.experiencia = experiencia;
-		
 		this.nivel = nivel;
 		this.vida = nivel;
 		this.fuerza = nivel;
