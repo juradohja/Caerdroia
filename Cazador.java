@@ -8,9 +8,8 @@ public class Cazador extends Personaje{
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*3;
 		iniciativa = iniciativa*10;
-		hFisica = new Habilidad("Habilidad Física", 0, 0);
-		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
-
+		hFisica = new Habilidad("Mutilar", 80, 10);
+		hMagica = new Habilidad("Dardo Envenenado", 15, 35);
 	}
 
 	public Cazador(int nivel){
@@ -21,8 +20,8 @@ public class Cazador extends Personaje{
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*3;
 		iniciativa = iniciativa*10;
-		hFisica = new Habilidad("Habilidad Física", 0, 0);
-		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
+		hFisica = new Habilidad("Mutilar", 80, 10);
+		hMagica = new Habilidad("Dardo Envenenado", 15, 35);
 	}
 
 }
