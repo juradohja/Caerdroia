@@ -84,14 +84,31 @@ public class Combate implements Serializable{
 					int aatk = (int) dar;
 					if(aatk>0){
 						enemigo.setVida(enemigo.getVida()-aatk);
+						if(enemigo.getVida()>0){
+							JOptionPane.showMessageDialog(null, "Has bajado "+aatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
+						} else {
+							JOptionPane.showMessageDialog(null, "Has bajado "+aatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+						}
 					}
 					break;
 
 					case "S": // Curar
 					// Lista de pociones
-					int pocionElegida = 0; //
+					String[] curacionOpciones = {"1", "2", "3", "4", "5"};
+					String p1 = heroe.getBolsa().getPocion(0).getNombre();
+					String p2 = heroe.getBolsa().getPocion(1).getNombre();
+					String p3 = heroe.getBolsa().getPocion(2).getNombre();
+					String p4 = heroe.getBolsa().getPocion(3).getNombre();
+					String p5 = heroe.getBolsa().getPocion(4).getNombre();
+					Object pE=JOptionPane.showInputDialog(null, "¿Qué poción quieres usar? 1: "+p1+". 2: "+p2+". 3: "+p3+". 4: "+p4+". 5: "+p5+".", null, JOptionPane.INFORMATION_MESSAGE, null, curacionOpciones, curacionOpciones[0]);
+					String peString = (String) pE;
+					int pocionElegida = Integer.parseInt(peString);
 					try {
       					heroe.setVida(heroe.getVida()+heroe.getBolsa().getPocion(pocionElegida).getVida());
+    					if(heroe.getVida()>heroe.getMaxVida()){
+    						heroe.setVida(heroe.getMaxVida());
+    					}
+      					JOptionPane.showMessageDialog(null, "Has sanado "+heroe.getBolsa().getPocion(pocionElegida).getVida()+" PV. Ahora tienes "+heroe.getVida()+" PV.");
       					if(pocionElegida < 4){
       						for(int i = pocionElegida; i<4; i++){
       							heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
@@ -106,7 +123,7 @@ public class Combate implements Serializable{
 						}
       				} catch (NullPointerException e){
       					// No tienes pociones
-      					JOptionPane.showMessageDialog(null, "No tienes pociones");
+      					JOptionPane.showMessageDialog(null, "Eso no te ha subido PDV");
       				}
 					break;
 				}
@@ -119,6 +136,11 @@ public class Combate implements Serializable{
 					int hfene = (int) ehf;
 					if(hfene>0){
 						heroe.setVida(heroe.getVida()-hfene);
+						if(heroe.getVida()>0){
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hfene+ " PV. Te quedan "+heroe.getVida()+" PV.");
+						} else {
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hfene+ " PV. ¡Has sido vencido!");
+						}
 					}
 					break;
 
@@ -127,6 +149,11 @@ public class Combate implements Serializable{
 					int hmene = (int) ehm;
 					if(hmene>0){
 						heroe.setVida(heroe.getVida()-hmene);
+						if(heroe.getVida()>0){
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hmene+ " PV. Te quedan "+heroe.getVida()+" PV.");
+						} else {
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hmene+ " PV. ¡Has sido vencido!");
+						}
 					}
 					break;
 				}

@@ -20,6 +20,9 @@ public class Bolsa implements Serializable{
 		this.peto = new Peto(true);
 		this.accesorio = new Accesorio(true);
 		this.llave = new Llave(0);
+		for(int i=0; i<pociones.length; i++){
+			pociones[i] = new Pocion(3);
+		}
 	}
 	public Arma getArma() {
 		return arma;
