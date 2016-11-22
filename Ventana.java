@@ -27,26 +27,7 @@ public class Ventana extends JFrame{
 		add(mapa);
 		datos = new JPanel();
 		datos.setLayout(new GridLayout(10,1));
-		nombre = new JLabel("Nombre: "+m.getHeroe());
-		vida = new JLabel("Vida: "+m.getHeroe());
-		fuerza = new JLabel("Fuerza: "+m.getHeroe());
-		magia = new JLabel("Magia: "+m.getHeroe());
-		resistencia = new JLabel("Resistencia: "+m.getHeroe());
-		inteligencia = new JLabel("Inteligencia: "+m.getHeroe());
-		iniciativa = new JLabel("Iniciativa: "+m.getHeroe());
-		experiencia = new JLabel("Experiencia: "+m.getHeroe());		
-		nivel = new JLabel("Nivel: "+m.getHeroe());
-		bolsa = new JLabel("Bolsa: "+m.getHeroe());
-		datos.add(nombre);
-		datos.add(vida);
-		datos.add(fuerza);
-		datos.add(magia);
-		datos.add(resistencia);
-		datos.add(inteligencia);
-		datos.add(iniciativa);
-		datos.add(experiencia);
-		datos.add(nivel);
-		datos.add(bolsa);
+		drawInfo(datos, m);
 		add(datos);
 		botones = new JPanel();
 		botones.setLayout(new GridLayout(2,2));
@@ -65,6 +46,29 @@ public class Ventana extends JFrame{
 		add(info);
 	}
 
+	public void drawInfo(JPanel datos, Mapa m){
+		nombre = new JLabel("Nombre: "+m.getHeroe().getNombre());
+		vida = new JLabel("Vida: "+m.getHeroe().getVida());
+		fuerza = new JLabel("Fuerza: "+m.getHeroe().getFuerza());
+		magia = new JLabel("Magia: "+m.getHeroe().getMagia());
+		resistencia = new JLabel("Resistencia: "+m.getHeroe().getResistencia());
+		inteligencia = new JLabel("Inteligencia: "+m.getHeroe().getInteligencia());
+		iniciativa = new JLabel("Iniciativa: "+m.getHeroe().getIniciativa());
+		experiencia = new JLabel("Experiencia: "+m.getHeroe().getExperiencia());		
+		nivel = new JLabel("Nivel: "+m.getHeroe().getNivel());
+		bolsa = new JLabel("Bolsa: "+m.getHeroe().getBolsa());
+		datos.add(nombre);
+		datos.add(vida);
+		datos.add(fuerza);
+		datos.add(magia);
+		datos.add(resistencia);
+		datos.add(inteligencia);
+		datos.add(iniciativa);
+		datos.add(experiencia);
+		datos.add(nivel);
+		datos.add(bolsa);
+	}
+
 	public void drawMap(JPanel mapa, Mapa m){
 		for(int i = 0; i<5; i++){
 			for(int j = 0; j<5; j++){
@@ -79,15 +83,26 @@ public class Ventana extends JFrame{
 						celda.setText("No despejado");
 					}
 				}
-				t =	m.getCamara(i,j).getUp();
-				l =	m.getCamara(i,j).getLeft();
-				b =	m.getCamara(i,j).getDown();
-				r =	m.getCamara(i,j).getRight();
+				t =	changeNumber(m.getCamara(i,j).getUp());
+				l =	changeNumber(m.getCamara(i,j).getLeft());
+				b =	changeNumber(m.getCamara(i,j).getDown());
+				r =	changeNumber(m.getCamara(i,j).getRight());
 				border = BorderFactory.createMatteBorder(t,l,b,r, new Color(165,42,42));			
 				celda.setBorder(border);
 				mapa.add(celda);
 			}
 		}
 	}
+	 public int changeNumber(int num){
+	 	switch(num){
+	 		case 0:
+	 			return 4;
+	 		case 1:
+	 			return 2;
+	 		case 2:
+	 			return 0;
+	 	}
+	 	return 0;
+	 }
 
 }

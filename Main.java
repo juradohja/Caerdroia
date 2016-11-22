@@ -26,9 +26,11 @@ public class Main extends JFrame implements ActionListener{
 	}
 
 	public void initComponents(GridBagConstraints c){
+		personajes.setFont(new Font("Arial",Font.PLAIN,25));
 		crear = new JButton("Crear");
 		nom = new JLabel("Nombre: ");
 		tit = new JLabel("Caerdroia");
+		tit.setHorizontalAlignment(JLabel.CENTER);
 		create = new JLabel("Bienvenido, crea a tu nuevo personaje");
 		tip = new JLabel("Tipo: ");
 		nombre = new JTextField(12);
@@ -61,8 +63,6 @@ public class Main extends JFrame implements ActionListener{
 			Mapa m = new Mapa(p);
 			Ventana v = new Ventana(m);
 			dispose();
-			System.out.println(p.getNombre());
-			System.out.println(type);
 		}
 
 	public Personaje createHero(String n, int t){
