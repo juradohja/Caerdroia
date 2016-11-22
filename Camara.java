@@ -234,7 +234,7 @@ public class Camara{
 				}
 			}
 		}
-		return heroe;
+		return afterHeroe;
 	}
 
 }

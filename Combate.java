@@ -98,7 +98,7 @@ public class Combate{
 				int accionEnemigo=random.nextInt(2);
 				switch(accionEnemigo){
 					case 0: // Habilidad física
-					double ehf = ((enemigo.getHFisica().getFuerza())+(enemigo.getFuerza()*0.5)-heroe.getResistencia());
+					double ehf = ((enemigo.getHFisica().getFuerza())+(enemigo.getFuerza()*0.5)-heroe.getResistencia()-(0.4*(heroe.getBolsa().getBotas().getResistencia()+heroe.getBolsa().getCasco().getResistencia()+heroe.getBolsa().getPeto().getResistencia())));
 					int hfene = (int) ehf;
 					if(hfene>0){
 						heroe.setVida(heroe.getVida()-hfene);
@@ -106,7 +106,7 @@ public class Combate{
 					break;
 
 					case 1: // Habilidad mágica
-					double ehm = ((enemigo.getHMagica().getMagia())+(enemigo.getMagia()*0.5)-heroe.getInteligencia());
+					double ehm = ((enemigo.getHMagica().getMagia())+(enemigo.getMagia()*0.5)-heroe.getInteligencia()-(0.4*(heroe.getBolsa().getBotas().getInteligencia()+heroe.getBolsa().getCasco().getInteligencia()+heroe.getBolsa().getPeto().getInteligencia())));
 					int hmene = (int) ehm;
 					if(hmene>0){
 						heroe.setVida(heroe.getVida()-hmene);
