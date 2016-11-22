@@ -35,7 +35,11 @@ public class Camara{
 		this.acertijo = acertijo;
 		this.respuesta = respuesta;
 		this.nivel = nivel;
-		entered = false;
+		if(nivel=1){
+			entered = true;
+		} else {
+			entered = false;
+		}	
 		random = new Random();
 	}
 
