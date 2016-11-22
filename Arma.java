@@ -75,7 +75,7 @@ public class Arma extends Equipo implements Serializable{
 			break;
 
 			case 10:
-			nombre = "Báculo";
+			nombre = "Baculo";
 			magia= 20;
 			fuerza= 0;
 			break;

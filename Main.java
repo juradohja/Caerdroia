@@ -18,7 +18,7 @@ public class Main extends JFrame implements ActionListener, Serializable{
 
 	public Main(){
 		setTitle("Caerdroia");
-		setSize(1000,1000);
+		setSize(700,700);
 		setLayout(new GridBagLayout());
 		setUIFont (new javax.swing.plaf.FontUIResource("Arial",Font.PLAIN,35));
 		GridBagConstraints c = new GridBagConstraints();

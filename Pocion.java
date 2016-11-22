@@ -25,19 +25,19 @@ public class Pocion implements Serializable{
 	private void initPotion(int nivel){
 		switch(nivel){
 			case 0:
-			nombre = "Poción chica";
+			nombre = "Pocion chica";
 			vida = 50;
 			break;
 			case 1:
-			nombre = "Poción mediana";
+			nombre = "Pocion mediana";
 			vida = 150;
 			break;
 			case 2:
-			nombre = "Poción grande";
+			nombre = "Pocion grande";
 			vida = 300;
 			break;
 			case 3:
-			nombre = "Poción vacía";
+			nombre = "Pocion vacía";
 			vida = 0;
 			break;
 		}

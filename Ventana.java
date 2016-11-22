@@ -67,7 +67,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 
 	public void drawInfo(JPanel datos){
 		nombre = new JLabel("Nombre: "+m.getHeroe().getNombre());
-		vida = new JLabel("Vida: "+m.getHeroe().getMaxVida());
+		vida = new JLabel("Vida Maxima: "+m.getHeroe().getMaxVida());
 		fuerza = new JLabel("Fuerza: "+m.getHeroe().getFuerza());
 		magia = new JLabel("Magia: "+m.getHeroe().getMagia());
 		resistencia = new JLabel("Resistencia: "+m.getHeroe().getResistencia());
@@ -164,10 +164,10 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
-	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste.");
 	 					dispose();
 	 				}
-	 				System.out.println(x+","+y);
+	 				//System.out.println(x+","+y);
 	 			}
 	 			break;
 	 		case "down":
@@ -186,10 +186,14 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
-	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste.");
 	 					dispose();
+	 				} else {
+		 				if(m.getCamara(x,y).getNivel()==25){
+		 					dispose();
+		 				}
 	 				}
-	 				System.out.println(x+","+y);
+	 				//System.out.println(x+","+y);
 	 			}
 	 			break;
 	 		case "left":
@@ -208,10 +212,10 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
-	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste.");
 	 					dispose();
 	 				}
-	 				System.out.println(x+","+y);
+	 				//System.out.println(x+","+y);
 	 			}
 	 			break;
 	 		case "right":
@@ -230,10 +234,10 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
-	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste.");
 	 					dispose();
 	 				}
-	 				System.out.println(x+","+y);
+	 				//System.out.println(x+","+y);
 	 			}
 	 			break;
 	 	}

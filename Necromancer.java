@@ -10,7 +10,7 @@ public class Necromancer extends Personaje implements Serializable{
 		resistencia = resistencia*3;
 		inteligencia = inteligencia*4;
 		hFisica = new Habilidad("Necrosis", 35, 15);
-		hMagica = new Habilidad("Toque Cadavérico", 10, 80);
+		hMagica = new Habilidad("Toque Cadaverico", 10, 80);
 	}
 
 	public Necromancer(int nivel){
@@ -22,7 +22,7 @@ public class Necromancer extends Personaje implements Serializable{
 		resistencia = resistencia*3;
 		inteligencia = inteligencia*4;
 		hFisica = new Habilidad("Necrosis", 35, 15);
-		hMagica = new Habilidad("Toque Cadavérico", 10, 80);
+		hMagica = new Habilidad("Toque Cadaverico", 10, 80);
 	}
 
 }

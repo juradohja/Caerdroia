@@ -19,7 +19,7 @@ public class Casco extends Equipo implements Serializable{
 	protected void setAttributes(int tipo){
 		switch (tipo) {
 			case 0:
-			nombre= "Máscara";
+			nombre= "Mascara";
 			resistencia= 10;
 			inteligencia= 10;
 			break;

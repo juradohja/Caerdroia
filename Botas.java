@@ -37,7 +37,7 @@ public class Botas extends Equipo implements Serializable{
 			break;
 
 			case 3:
-			nombre= "Botas Metálicas";
+			nombre= "Botas Metalicas";
 			resistencia= 25;
 			inteligencia= 25;
 			break;

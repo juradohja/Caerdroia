@@ -35,14 +35,13 @@ public class Combate implements Serializable{
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
 			if(turnoHeroe){
-				System.out.println("Turno héroe");
 				String hf = heroe.getHFisica().getNombre();
 				String hm = heroe.getHMagica().getNombre();
 				String ar = "Usar "+heroe.getBolsa().getArma().getNombre();
 				String sa = "Sanar";
 				// ¿Qué quieres hacer?
 				String[] accionHeroeOpciones = {"HF", "HM", "A", "S"};
-				Object aH=JOptionPane.showInputDialog(null, "Es tu turno, ¿qué quieres hacer? HF: "+hf+". HM: "+hm+". A: "+ar+". S: "+sa+".", null, JOptionPane.INFORMATION_MESSAGE, null, accionHeroeOpciones, accionHeroeOpciones[0]);
+				Object aH=JOptionPane.showInputDialog(null, "Es tu turno, que quieres hacer? HF: "+hf+". HM: "+hm+". A: "+ar+". S: "+sa+".", null, JOptionPane.INFORMATION_MESSAGE, null, accionHeroeOpciones, accionHeroeOpciones[0]);
 				String accionHeroe = (String) aH;
 					// Habilidad
 						// Físico
@@ -58,7 +57,7 @@ public class Combate implements Serializable{
 						if(enemigo.getVida()>0){
 							JOptionPane.showMessageDialog(null, "Has bajado "+hfatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
 						} else {
-							JOptionPane.showMessageDialog(null, "Has bajado "+hfatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+							JOptionPane.showMessageDialog(null, "Has bajado "+hfatk+ " PV al enemigo. El enemigo ha sido vencido!");
 						}
 					}
 					break;
@@ -71,7 +70,7 @@ public class Combate implements Serializable{
 						if(enemigo.getVida()>0){
 							JOptionPane.showMessageDialog(null, "Has bajado "+hmatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
 						} else {
-							JOptionPane.showMessageDialog(null, "Has bajado "+hmatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+							JOptionPane.showMessageDialog(null, "Has bajado "+hmatk+ " PV al enemigo. El enemigo ha sido vencido!");
 						}
 					}
 					break;
@@ -87,7 +86,7 @@ public class Combate implements Serializable{
 						if(enemigo.getVida()>0){
 							JOptionPane.showMessageDialog(null, "Has bajado "+aatk+ " PV al enemigo. Le quedan "+enemigo.getVida()+" PV.");
 						} else {
-							JOptionPane.showMessageDialog(null, "Has bajado "+aatk+ " PV al enemigo. ¡El enemigo ha sido vencido!");
+							JOptionPane.showMessageDialog(null, "Has bajado "+aatk+ " PV al enemigo. El enemigo ha sido vencido!");
 						}
 					}
 					break;
@@ -100,7 +99,7 @@ public class Combate implements Serializable{
 					String p3 = heroe.getBolsa().getPocion(2).getNombre();
 					String p4 = heroe.getBolsa().getPocion(3).getNombre();
 					String p5 = heroe.getBolsa().getPocion(4).getNombre();
-					Object pE=JOptionPane.showInputDialog(null, "¿Qué poción quieres usar? 1: "+p1+". 2: "+p2+". 3: "+p3+". 4: "+p4+". 5: "+p5+".", null, JOptionPane.INFORMATION_MESSAGE, null, curacionOpciones, curacionOpciones[0]);
+					Object pE=JOptionPane.showInputDialog(null, "Que pocion quieres usar? 1: "+p1+". 2: "+p2+". 3: "+p3+". 4: "+p4+". 5: "+p5+".", null, JOptionPane.INFORMATION_MESSAGE, null, curacionOpciones, curacionOpciones[0]);
 					String peString = (String) pE;
 					int pocionElegida = Integer.parseInt(peString)-1;
 					try {
@@ -117,11 +116,6 @@ public class Combate implements Serializable{
       					}
       					heroe.getBolsa().setPocion(new Pocion(3), 4);
       					heroe.getBolsa().setNumeroPociones(heroe.getBolsa().getNumeroPociones()-1);
-      					if(pocionElegida < 4){
-							for(int i = pocionElegida; i<4; i++){
-								heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
-							}
-						}
       				} catch (NullPointerException e){
       					// No tienes pociones
       					JOptionPane.showMessageDialog(null, "Eso no te ha subido PDV");
@@ -129,7 +123,6 @@ public class Combate implements Serializable{
 					break;
 				}
 			} else {
-				System.out.println("Turno enemigo");
 				int accionEnemigo=random.nextInt(2);
 				switch(accionEnemigo){
 					case 0: // Habilidad física
@@ -140,8 +133,10 @@ public class Combate implements Serializable{
 						if(heroe.getVida()>0){
 							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hfene+ " PV. Te quedan "+heroe.getVida()+" PV.");
 						} else {
-							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hfene+ " PV. ¡Has sido vencido!");
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hfene+ " PV. Has sido vencido!");
 						}
+					} else {
+						JOptionPane.showMessageDialog(null, "El enemigo te ha atacado, pero no te ha hecho daño. Te quedan "+heroe.getVida()+" PV.");
 					}
 					break;
 
@@ -153,8 +148,10 @@ public class Combate implements Serializable{
 						if(heroe.getVida()>0){
 							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hmene+ " PV. Te quedan "+heroe.getVida()+" PV.");
 						} else {
-							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hmene+ " PV. ¡Has sido vencido!");
+							JOptionPane.showMessageDialog(null, "El enemigo te ha bajado "+hmene+ " PV. Has sido vencido!");
 						}
+					} else {
+						JOptionPane.showMessageDialog(null, "El enemigo te ha atacado, pero no te ha hecho daño. Te quedan "+heroe.getVida()+" PV.");
 					}
 					break;
 				}

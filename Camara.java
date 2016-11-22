@@ -209,10 +209,9 @@ public class Camara implements Serializable{
 				afterHeroe.setMaxVida(heroe.getMaxVida()+random.nextInt(16));
 				afterHeroe.setVida(heroe.getMaxVida());
 				entered = true;
-				return afterHeroe;
 			} else {
 				// Respuesta incorrecta
-				JOptionPane.showMessageDialog(null, "Tas tonto");
+				JOptionPane.showMessageDialog(null, "Estas tonto, ahora lucharas con un "+claseEnemigo+ " nivel "+enemigo.getNivel());
 				afterHeroe = iniciarCombate(heroe, enemigo);
 			}
 			if(afterHeroe.getVida()>0){
@@ -224,7 +223,7 @@ public class Camara implements Serializable{
 				afterHeroe.setMaxVida(heroe.getMaxVida()+random.nextInt(16));
 				afterHeroe.setVida(heroe.getMaxVida());
 				String[] equipoOpciones = {"Aceptar", "Rechazar"};
-				Object eO=JOptionPane.showInputDialog(null, "Has encontrado: "+equipo.getNombre()+". ¿Deseas cambiarlo? (Reemplazará el objeto del mismo tipo)", null, JOptionPane.INFORMATION_MESSAGE, null, equipoOpciones, equipoOpciones[0]);
+				Object eO=JOptionPane.showInputDialog(null, "Has encontrado: "+equipo.getNombre()+". Deseas cambiarlo? (Perderas el objeto correspondiente)", null, JOptionPane.INFORMATION_MESSAGE, null, equipoOpciones, equipoOpciones[0]);
 				String decisionEquipo = (String) eO;
 				boolean hasAcceptedEquipo;
 				if(decisionEquipo.equals("Aceptar")){
@@ -265,14 +264,17 @@ public class Camara implements Serializable{
 					afterHeroe.getBolsa().setPocion(pocion, afterHeroe.getBolsa().getNumeroPociones());
 					afterHeroe.getBolsa().setNumeroPociones(afterHeroe.getBolsa().getNumeroPociones()+1);
 				} else {
-					JOptionPane.showMessageDialog(null, "Has encontrado una "+pocion.getNombre()+". Lástima que no quepa en tu bolsa.");
+					JOptionPane.showMessageDialog(null, "Has encontrado una "+pocion.getNombre()+". Lastima que no quepa en tu bolsa.");
 				}
 				if(llave.getNivel()!=0){
-					JOptionPane.showMessageDialog(null, "¡Has encontrado la llave #"+llave.getNivel()+"!");
+					JOptionPane.showMessageDialog(null, "Has encontrado la llave #"+llave.getNivel()+"!");
 					afterHeroe.getBolsa().getLlave().setNivel(llave.getNivel());
 				}
 			}
 			entered=true;
+		}
+		if(nivel==25){
+			JOptionPane.showMessageDialog(null, "Felicidades! Has ganado Caerdroia! Gracias por jugar.");
 		}
 		return afterHeroe;
 	}
