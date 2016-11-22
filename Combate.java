@@ -1,4 +1,5 @@
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class Combate{
 	
@@ -93,14 +94,15 @@ public class Combate{
       					}
       					heroe.getBolsa().setPocion(new Pocion(3), 4);
       					heroe.getBolsa().setNumeroPociones(heroe.getBolsa().getNumeroPociones()-1);
+      					if(pocionElegida < 4){
+							for(int i = pocionElegida; i<4; i++){
+								heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
+							}
+						}
       				} catch (NullPointerException e){
       					// No tienes pociones
+      					JOptionPane.showMessageDialog(null, "No tienes pociones");
       				}
-					if(pocionElegida < 4){
-						for(int i = pocionElegida; i<4; i++){
-							heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
-						}
-					}
 					break;
 				}
 			} else {
