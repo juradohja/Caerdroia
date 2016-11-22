@@ -192,13 +192,13 @@ public class Ventana extends JFrame implements ActionListener{
 	 public boolean validateMove(int w){
 	 	switch(w){
 	 		case 0:
-	 			System.out.println("Es una pared wey");
+	 			JOptionPane.showMessageDialog(null, "Es una pared, no puedes moverte");
 	 			return false;
 	 		case 1:
-	 			System.out.println("Tienes que saltar el muro");
+	 			JOptionPane.showMessageDialog(null, "Puerta cerrada");
 	 			return false;
 	 		case 2:
-	 			System.out.println("Pasales");
+	 			JOptionPane.showMessageDialog(null, "Has cambiado de cámara");
 	 			return true;
 	 	}
 	 	return  false;
