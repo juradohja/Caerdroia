@@ -8,6 +8,8 @@ public class Necromancer extends Personaje{
 		resistencia = resistencia*3;
 		inteligencia = inteligencia*4;
 		iniciativa = iniciativa*8;
+		hFisica = new Habilidad("Habilidad Física", 0, 0);
+		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
 	}
 
 	public Necromancer(int nivel){
@@ -18,6 +20,8 @@ public class Necromancer extends Personaje{
 		resistencia = resistencia*3;
 		inteligencia = inteligencia*4;
 		iniciativa = iniciativa*8;
+		hFisica = new Habilidad("Habilidad Física", 0, 0);
+		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
 	}
 
 }

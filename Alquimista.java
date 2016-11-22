@@ -8,6 +8,8 @@ public class Alquimista extends Personaje{
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*5;
 		iniciativa = iniciativa*6;
+		hFisica = new Habilidad("Habilidad Física", 0, 0);
+		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
 	}
 
 	public Alquimista(int nivel){
@@ -18,6 +20,8 @@ public class Alquimista extends Personaje{
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*5;
 		iniciativa = iniciativa*6;
+		hFisica = new Habilidad("Habilidad Física", 0, 0);
+		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
 	}
 
 }
