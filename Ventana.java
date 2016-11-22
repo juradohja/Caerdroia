@@ -73,7 +73,7 @@ public class Ventana extends JFrame implements ActionListener{
 		botas = new JLabel("Botas: "+m.getHeroe().getBolsa().getBotas().getNombre());
 		peto = new JLabel("Peto: "+m.getHeroe().getBolsa().getPeto().getNombre());
 		accesorio = new JLabel("Accesorio: "+m.getHeroe().getBolsa().getAccesorio().getNombre());
-		llave = new JLabel("Llave: "+m.getHeroe().getBolsa().getLlave());
+		llave = new JLabel("Llave: "+m.getHeroe().getBolsa().getLlave().getNivel());
 		datos.add(nombre);
 		datos.add(vida);
 		datos.add(fuerza);
@@ -145,6 +145,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				mapa.revalidate();
 	 				mapa.repaint();
 	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				datos.removeAll();
+	 				drawInfo(datos);
+	 				datos.revalidate();
+	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
 	 					dispose();
 	 				}
@@ -162,6 +166,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				mapa.revalidate();
 	 				mapa.repaint();
 	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				datos.removeAll();
+	 				drawInfo(datos);
+	 				datos.revalidate();
+	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
 	 					dispose();
 	 				}
@@ -179,6 +187,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				mapa.revalidate();
 	 				mapa.repaint();
 	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				datos.removeAll();
+	 				drawInfo(datos);
+	 				datos.revalidate();
+	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
 	 					dispose();
 	 				}
@@ -196,6 +208,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				mapa.revalidate();
 	 				mapa.repaint();
 	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				datos.removeAll();
+	 				drawInfo(datos);
+	 				datos.revalidate();
+	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
 	 					dispose();
 	 				}
