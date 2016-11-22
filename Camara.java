@@ -249,6 +249,7 @@ public class Camara{
 					// No hay espacio en tu bolsa para otra poción
 				}
 			}
+			entered=true;
 		}
 		return afterHeroe;
 	}
