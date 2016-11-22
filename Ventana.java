@@ -8,7 +8,7 @@ public class Ventana extends JFrame implements ActionListener{
 	private MatteBorder border;
 	private JPanel botones, mapa, datos, info;
 	private JButton up, down, left, right;
-	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion;
+	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion, arma, casco, botas, peto, accesorio, llave;
 	private Mapa m;
 
 	public Ventana(Mapa m){
@@ -29,7 +29,7 @@ public class Ventana extends JFrame implements ActionListener{
 		drawMap(mapa);
 		add(mapa);
 		datos = new JPanel();
-		datos.setLayout(new GridLayout(10,1));
+		datos.setLayout(new GridLayout(8,2));
 		drawInfo(datos);
 		add(datos);
 		botones = new JPanel();
@@ -59,15 +59,21 @@ public class Ventana extends JFrame implements ActionListener{
 
 	public void drawInfo(JPanel datos){
 		nombre = new JLabel("Nombre: "+m.getHeroe().getNombre());
-		vida = new JLabel("Vida: "+m.getHeroe().getVida());
+		vida = new JLabel("Vida: "+m.getHeroe().getVida()+"/"+m.getHeroe().getMaxVida());
 		fuerza = new JLabel("Fuerza: "+m.getHeroe().getFuerza());
 		magia = new JLabel("Magia: "+m.getHeroe().getMagia());
 		resistencia = new JLabel("Resistencia: "+m.getHeroe().getResistencia());
 		inteligencia = new JLabel("Inteligencia: "+m.getHeroe().getInteligencia());
 		iniciativa = new JLabel("Iniciativa: "+m.getHeroe().getIniciativa());
-		experiencia = new JLabel("Experiencia: "+m.getHeroe().getExperiencia());		
+		experiencia = new JLabel("Experiencia: "+m.getHeroe().getExperiencia());
+		bolsa = new JLabel("Bolsa: ");		
 		nivel = new JLabel("Nivel: "+m.getHeroe().getNivel());
-		bolsa = new JLabel("Bolsa: "+m.getHeroe().getBolsa());
+		arma = new JLabel("Arma: "+m.getHeroe().getBolsa().getArma().getNombre());
+		casco = new JLabel("Casco: "+m.getHeroe().getBolsa().getCasco().getNombre());
+		botas = new JLabel("Botas: "+m.getHeroe().getBolsa().getBotas().getNombre());
+		peto = new JLabel("Peto: "+m.getHeroe().getBolsa().getPeto().getNombre());
+		accesorio = new JLabel("Accesorio: "+m.getHeroe().getBolsa().getAccesorio().getNombre());
+		llave = new JLabel("Llave: "+m.getHeroe().getBolsa().getLlave());
 		datos.add(nombre);
 		datos.add(vida);
 		datos.add(fuerza);
@@ -76,8 +82,14 @@ public class Ventana extends JFrame implements ActionListener{
 		datos.add(inteligencia);
 		datos.add(iniciativa);
 		datos.add(experiencia);
-		datos.add(nivel);
 		datos.add(bolsa);
+		datos.add(nivel);
+		datos.add(arma);
+		datos.add(casco);
+		datos.add(botas);
+		datos.add(peto);
+		datos.add(accesorio);
+		datos.add(llave);
 	}
 
 	public void drawMap(JPanel mapa){
