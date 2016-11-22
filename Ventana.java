@@ -136,7 +136,7 @@ public class Ventana extends JFrame implements ActionListener{
 	 	switch(wall){
 	 		case "up":
 	 			w = m.getCamara(x,y).getUp();
-	 			move = validateMove(w);
+	 			move = validateMove(w, wall);
 	 			if (move == true){
 	 				y--;
 	 				m.setPosicionY(y);
@@ -149,7 +149,7 @@ public class Ventana extends JFrame implements ActionListener{
 	 			break;
 	 		case "down":
 	 			w = m.getCamara(x,y).getDown();
-	 			move = validateMove(w);
+	 			move = validateMove(w, wall);
 	 			if (move == true){
 	 				y++;
 	 				m.setPosicionY(y);
@@ -162,7 +162,7 @@ public class Ventana extends JFrame implements ActionListener{
 	 			break;
 	 		case "left":
 	 			w = m.getCamara(x,y).getLeft();
-	 			move = validateMove(w);
+	 			move = validateMove(w, wall);
 	 			if (move == true){
 	 				x--;
 	 				m.setPosicionX(x);
@@ -175,7 +175,7 @@ public class Ventana extends JFrame implements ActionListener{
 	 			break;
 	 		case "right":
 	 			w = m.getCamara(x,y).getRight();
-	 			move = validateMove(w);
+	 			move = validateMove(w, wall);
 	 			if (move == true){
 	 				x++;
 	 				m.setPosicionX(x);
@@ -189,23 +189,56 @@ public class Ventana extends JFrame implements ActionListener{
 	 	}
 	 }
 
-	 public boolean validateMove(int w){
+	 public boolean validateMove(int w, String dir){
 	 	switch(w){
 	 		case 0:
 	 			JOptionPane.showMessageDialog(null, "Es una pared, no puedes moverte");
 	 			return false;
 	 		case 1:
 	 			JOptionPane.showMessageDialog(null, "Puerta cerrada");
-	 			if(m.getCamara(x,y).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
-	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
-	 				return true;
-	 			}else{
-	 				return false;
-	 			}
+	 			return door(dir);
 	 		case 2:
 	 			JOptionPane.showMessageDialog(null, "Has cambiado de cámara");
 	 			return true;
 	 	}
 	 	return  false;
+	 }
+
+	 public boolean door(String d){
+	 	switch(d){
+	 		case "up":
+	 			if(m.getCamara(x,y-1).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
+	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
+	 				//resetear llave y cambiar valor de ambas camaras a open-2
+	 				return true;
+	 			}else{
+	 				return false;
+	 			}
+	 		case "down":
+	 			if(m.getCamara(x,y+1).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
+	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
+	 				//resetear llave y cambiar valor de ambas camaras a open-2
+	 				return true;
+	 			}else{
+	 				return false;
+	 			}
+	 		case "left":
+	 			if(m.getCamara(x-1,y).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
+	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
+	 				//resetear llave y cambiar valor de ambas camaras a open-2
+	 				return true;
+	 			}else{
+	 				return false;
+	 			}
+	 		case "right":
+	 			if(m.getCamara(x+1,y).getNivel()==m.getHeroe().getBolsa().getLlave().getNivel()){
+	 				JOptionPane.showMessageDialog(null, "Has utilizado tu llave");
+	 				//resetear llave y cambiar valor de ambas camaras a open-2
+	 				return true;
+	 			}else{
+	 				return false;
+	 			}
+	 		}
+	 	return false;
 	 }
 }
