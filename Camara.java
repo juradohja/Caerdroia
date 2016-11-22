@@ -164,4 +164,7 @@ public class Camara{
 		this.nivel = nivel;
 	}
 
+	public boolean isEntered(){
+		return entered;
+	}
 }

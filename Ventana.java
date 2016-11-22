@@ -10,20 +10,20 @@ public class Ventana extends JFrame{
 	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion;
 
 	public Ventana(Mapa m){
-		x = mapa.getPosicionX();
-		y = mapa.getPosicionY();
+		x = m.getPosicionX();
+		y = m.getPosicionY();
 		setTitle("Caerdroia");
 		setSize(2000,2000);
 		setLayout(new GridLayout(2,2));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		initComponents();
+		initComponents(m);
 		setVisible(true);
 	}
 
-	public void initComponents(){
+	public void initComponents(Mapa m){
 		mapa = new JPanel();
 		mapa.setLayout(new GridLayout(5,5));
-		drawMap(mapa);
+		drawMap(mapa, m);
 		add(mapa);
 		datos = new JPanel();
 		datos.setLayout(new GridLayout(10,1));
@@ -65,22 +65,26 @@ public class Ventana extends JFrame{
 		add(info);
 	}
 
-	public void drawMap(JPanel mapa){
+	public void drawMap(JPanel mapa, Mapa m){
 		for(int i = 0; i<5; i++){
 			for(int j = 0; j<5; j++){
 				JLabel celda = new JLabel();
 				celda.setHorizontalAlignment(JLabel.CENTER);
 				if(i==x && y==j){
-					celda.setText("12345");
+					celda.setText("Héroe");
 				}else{
-					celda.setText("Camara");
+					if(m.getCamara(i,j).isEntered() == true){
+						celda.setText("Despejado");
+					}else{
+						celda.setText("No despejado");
+					}
 				}
-				t =	mapa.getCamara(i,j).getUp();
-				l =	mapa.getCamara(i,j).getLeft();
-				b =	mapa.getCamara(i,j).getDown();
-				r =	mapa.getCamara(i,j).getRight();
+				t =	m.getCamara(i,j).getUp();
+				l =	m.getCamara(i,j).getLeft();
+				b =	m.getCamara(i,j).getDown();
+				r =	m.getCamara(i,j).getRight();
 				border = BorderFactory.createMatteBorder(t,l,b,r, new Color(165,42,42));			
-				celda.setBorder(borde);
+				celda.setBorder(border);
 				mapa.add(celda);
 			}
 		}
