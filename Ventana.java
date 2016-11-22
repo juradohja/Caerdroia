@@ -144,6 +144,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				drawMap(mapa);
 	 				mapa.revalidate();
 	 				mapa.repaint();
+	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				if(m.getHeroe().getVida()<=0){
+	 					dispose();
+	 				}
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -157,6 +161,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				drawMap(mapa);
 	 				mapa.revalidate();
 	 				mapa.repaint();
+	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				if(m.getHeroe().getVida()<=0){
+	 					dispose();
+	 				}
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -170,6 +178,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				drawMap(mapa);
 	 				mapa.revalidate();
 	 				mapa.repaint();
+	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				if(m.getHeroe().getVida()<=0){
+	 					dispose();
+	 				}
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
@@ -183,6 +195,10 @@ public class Ventana extends JFrame implements ActionListener{
 	 				drawMap(mapa);
 	 				mapa.revalidate();
 	 				mapa.repaint();
+	 				m.setHeroe(m.getCamara(x,y).cicloCamara(m.getHeroe()));
+	 				if(m.getHeroe().getVida()<=0){
+	 					dispose();
+	 				}
 	 				System.out.println(x+","+y);
 	 			}
 	 			break;
