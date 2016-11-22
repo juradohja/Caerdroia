@@ -3,6 +3,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 public class Ventana extends JFrame implements ActionListener, Serializable{
 	private int x, y, t, l, b, r;
@@ -21,6 +22,11 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 		setLayout(new GridLayout(2,2));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		initComponents();
+		addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		    	serialize(m);
+		    }
+		});
 		setVisible(true);
 	}
 
@@ -286,4 +292,16 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 		}
 	 	return false;
 	 }
+
+	public void serialize(Mapa m){
+		try {
+            FileOutputStream fileOut =   new FileOutputStream("Caerdroia.mej");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(m);
+            out.close();
+            fileOut.close();
+        }catch(IOException i) {
+           i.printStackTrace();
+        }
+	}
 }

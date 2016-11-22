@@ -2,6 +2,7 @@ import java.io.Serializable;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 
 public class Main extends JFrame implements ActionListener, Serializable{
 	private JButton crear;
@@ -91,6 +92,17 @@ public class Main extends JFrame implements ActionListener, Serializable{
     }
 
 	public static void main(String args[]){
-		Main m = new Main();
+		try{
+			FileInputStream fis = new FileInputStream("Caerdroia.mej");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			Mapa m = (Mapa) ois.readObject();
+			ois.close();
+			fis.close();
+			Ventana v = new Ventana(m);
+		}catch(IOException i){
+			Main m = new Main();
+		}catch(ClassNotFoundException c){
+			c.printStackTrace();
+		}
 	}
 }
