@@ -8,7 +8,6 @@ public class Alquimista extends Personaje{
 		magia = magia*12;
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*5;
-		iniciativa = iniciativa*6;
 		hFisica = new Habilidad("Transmutacion", 40, 30);
 		hMagica = new Habilidad("Crimen Mortal", 15, 65);
 	}
@@ -21,7 +20,6 @@ public class Alquimista extends Personaje{
 		magia = magia*12;
 		resistencia = resistencia*4;
 		inteligencia = inteligencia*5;
-		iniciativa = iniciativa*6;
 		hFisica = new Habilidad("Transmutacion", 40, 30);
 		hMagica = new Habilidad("Crimen Mortal", 15, 65);
 	}
