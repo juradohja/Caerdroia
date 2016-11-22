@@ -151,6 +151,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
 	 					dispose();
 	 				}
 	 				System.out.println(x+","+y);
@@ -172,6 +173,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
 	 					dispose();
 	 				}
 	 				System.out.println(x+","+y);
@@ -193,6 +195,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
 	 					dispose();
 	 				}
 	 				System.out.println(x+","+y);
@@ -214,6 +217,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 				datos.revalidate();
 	 				datos.repaint();
 	 				if(m.getHeroe().getVida()<=0){
+	 					JOptionPane.showMessageDialog(null, "Menso, perdiste");
 	 					dispose();
 	 				}
 	 				System.out.println(x+","+y);
@@ -231,7 +235,6 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 			JOptionPane.showMessageDialog(null, "Puerta cerrada");
 	 			return door(dir);
 	 		case 2:
-	 			JOptionPane.showMessageDialog(null, "Has cambiado de cámara");
 	 			return true;
 	 	}
 	 	return  false;
