@@ -8,8 +8,8 @@ public class Caballero extends Personaje{
 		resistencia = resistencia*5;
 		inteligencia = inteligencia*4;
 		iniciativa = iniciativa*5;
-		hFisica = new Habilidad("Habilidad Física", 0, 0);
-		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
+		hFisica = new Habilidad("Espada Sagrada", 65, 15);
+		hMagica = new Habilidad("Furia de Guerra", 30, 40);
 	}
 
 	public Caballero(int nivel){
@@ -20,8 +20,8 @@ public class Caballero extends Personaje{
 		resistencia = resistencia*5;
 		inteligencia = inteligencia*4;
 		iniciativa = iniciativa*5;
-		hFisica = new Habilidad("Habilidad Física", 0, 0);
-		hMagica = new Habilidad("Habilidad Mágica", 0, 0);
+		hFisica = new Habilidad("Espada Sagrada", 65, 15);
+		hMagica = new Habilidad("Furia de Guerra", 30, 40);
 	}
 
 }

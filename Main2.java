@@ -1,3 +1,4 @@
+/*
 import java.util.Scanner;
 
 public class Main2{
@@ -23,3 +24,4 @@ public class Main2{
 		}
 	}
 }
+*/
