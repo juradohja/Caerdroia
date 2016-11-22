@@ -1,8 +1,8 @@
 /*public class Main{
 	public static void main(String args[]){
-		Personaje heroe = new Personaje("Betosh", 100, 1000, 2000, 10, 9999, 2, 0, 1);
+		Personaje heroe = new Caballero("Betosh", 1);
 		Mapa mapa = new Mapa(heroe);
-		Ventana v = new Ventana(mapa); 
+		Ventana v = new Ventana(mapa);
 	}
 }*/
 

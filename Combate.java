@@ -1,5 +1,5 @@
 public class Combate{
-
+	
 	private Personaje heroe;
 	private Personaje enemigo;
 	
@@ -7,7 +7,7 @@ public class Combate{
 		this.heroe = heroe;
 		this.enemigo = enemigo;
 	}
-
+	
 	public Personaje getHeroe() {
 		return heroe;
 	}
