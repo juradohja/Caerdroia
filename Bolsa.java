@@ -63,4 +63,12 @@ public class Bolsa{
 	public Pocion getPocion(int i){
 		return pociones[i];
 	}
+
+	public int getNumeroPociones(){
+		return numeroPociones;
+	}
+
+	public void setNumeroPociones(int numeroPociones){
+		this.numeroPociones = numeroPociones;
+	}
 }

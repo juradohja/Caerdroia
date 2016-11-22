@@ -1,6 +1,7 @@
 // Pocion chica (50) - 0
 // Pocion mediana (150) - 1
 // Pocion grande (300) - 2
+// Pocion vacia (0) - 3
 
 public class Pocion{
 
@@ -32,6 +33,10 @@ public class Pocion{
 			case 2:
 			nombre = "Poción grande";
 			vida = 300;
+			break;
+			case 3:
+			nombre = "Poción vacía";
+			vida = 0;
 			break;
 		}
 	}

@@ -186,48 +186,52 @@ public class Camara{
 				// Felicidades
 			} else {
 				// Respuesta incorrecta
-				heroIsAlive = iniciarCombate(heroe, enemigo);
+				afterHeroe = iniciarCombate(heroe, enemigo);
 			}
-			if(heroIsAlive){
+			if(afterHeroe.getVida()>0){
 				// Felicidades
-				heroe.setFuerza(heroe.getFuerza()+random.nextInt(8));
-				heroe.setMagia(heroe.getMagia()+random.nextInt(8));
-				heroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
-				heroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
-				heroe.setMaxVida(heroe.setMaxVida()+random.nextInt(16));
-				heroe.setVida(heroe.getMaxVida());
+				afterHeroe.setFuerza(heroe.getFuerza()+random.nextInt(8));
+				afterHeroe.setMagia(heroe.getMagia()+random.nextInt(8));
+				afterHeroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
+				afterHeroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
+				afterHeroe.setMaxVida(heroe.setMaxVida()+random.nextInt(16));
+				afterHeroe.setVida(heroe.getMaxVida());
 				// Has recibido equipo
 				boolean hasAcceptedEquipo = true;
 				if(hasAcceptedEquipo){
 					switch(tipoEquipo){
 						case 0:
-						heroe.getBolsa().setAccesorio(equipo);
+						afterHeroe.getBolsa().setAccesorio(equipo);
 						break;
 
 						case 1:
-						heroe.getBolsa().setArma(equipo);
+						afterHeroe.getBolsa().setArma(equipo);
 						break;
 
 						case 2:
-						heroe.getBolsa().setBotas(equipo);
+						afterHeroe.getBolsa().setBotas(equipo);
 						break;
 
 						case 3:
-						heroe.getBolsa().setCasco(equipo);
+						afterHeroe.getBolsa().setCasco(equipo);
 						break;
 
 						case 4:
-						heroe.getBolsa().setPeto(equipo);
+						afterHeroe.getBolsa().setPeto(equipo);
 						break;
 					}
 				}
-				if(llave!=0){
+				if(llave.getNivel()!=0){
 					// Has conseguido la llave ##
-					heroe.getBolsa().getLlave().setNivel(llave);
+					afterHeroe.getBolsa().getLlave().setNivel(llave.getNivel());
 				}
-
-			} else {
-
+				if(afterHeroe.getBolsa().getNumeroPociones()<5){
+					// Has recibido esta poción
+					afterHeroe.getBolsa().setPocion(pocion, afterHeroe.getBolsa().getNumeroPociones());
+					afterHeroe.getBolsa().setNumeroPociones(afterHeroe.getBolsa().getNumeroPociones()+1);
+				} else {
+					// No hay espacio en tu bolsa para otra poción
+				}
 			}
 		}
 		return heroe;

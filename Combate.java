@@ -83,8 +83,15 @@ public class Combate{
 
 					case 3: // Curar
 					// Lista de pociones
-					Pocion pocionElegida; //
-					// heroe.setVida(heroe.getVida()+pocionElegida.getVida());
+					int pocionElegida = 0; //
+					heroe.setVida(heroe.getVida()+heroe.getBolsa().getPocion(pocionElegida).getVida());
+					if(pocionElegida < 4){
+						for(int i = pocionElegida; i<4; i++){
+							heroe.getBolsa().setPocion(heroe.getBolsa().getPocion(i+1), i);
+						}
+					}
+					heroe.getBolsa().setPocion(new Pocion(3), 4);
+					heroe.getBolsa().setNumeroPociones(heroe.getBolsa().getNumeroPociones()-1);
 					break;
 				}
 			} else {
