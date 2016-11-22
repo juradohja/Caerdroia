@@ -20,6 +20,7 @@ public class Camara{
 	private int nivel;
 	private Random random;
 	private boolean entered;
+	private int tipoEquipo;
 	
 	public Camara(int tipoEnemigo, int nivelEnemigo, int tipoEquipo, int tipoPocion, int claveLlave, int up, int down, int left, int right, String acertijo, String respuesta, int nivel) {
 		setEnemigo(tipoEnemigo, nivelEnemigo);
@@ -90,6 +91,7 @@ public class Camara{
 			equipo = new Peto(false);
 			break;
 		}
+		this.tipoEquipo = tipoEquipo;
 	}
 
 	public Pocion getPocion() {
@@ -168,21 +170,67 @@ public class Camara{
 		return entered;
 	}
 
-	public boolean iniciarCombate(Personaje heroe, Personaje enemigo){
+	public Personaje iniciarCombate(Personaje heroe, Personaje enemigo){
 		Combate combate = new Combate(heroe, enemigo);
-		boolean heroIsAlive = combate.entrarEnCombate();
-		return heroIsAlive;
+		Personaje afterHeroe = combate.entrarEnCombate();
+		return afterHeroe;
 	}
-/*
-	public void cicloCamara(){
+
+	public Personaje cicloCamara(Personaje heroe){
 		if(!entered){
 			// Mostrar acertijo
 			// Recibir respuesta
 			String res=""; //input
+			Personaje afterHeroe;
 			if(res.equals(respuesta)){
+				// Felicidades
+			} else {
+				// Respuesta incorrecta
+				heroIsAlive = iniciarCombate(heroe, enemigo);
+			}
+			if(heroIsAlive){
+				// Felicidades
+				heroe.setFuerza(heroe.getFuerza()+random.nextInt(8));
+				heroe.setMagia(heroe.getMagia()+random.nextInt(8));
+				heroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
+				heroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
+				heroe.setMaxVida(heroe.setMaxVida()+random.nextInt(16));
+				heroe.setVida(heroe.getMaxVida());
+				// Has recibido equipo
+				boolean hasAcceptedEquipo = true;
+				if(hasAcceptedEquipo){
+					switch(tipoEquipo){
+						case 0:
+						heroe.getBolsa().setAccesorio(equipo);
+						break;
+
+						case 1:
+						heroe.getBolsa().setArma(equipo);
+						break;
+
+						case 2:
+						heroe.getBolsa().setBotas(equipo);
+						break;
+
+						case 3:
+						heroe.getBolsa().setCasco(equipo);
+						break;
+
+						case 4:
+						heroe.getBolsa().setPeto(equipo);
+						break;
+					}
+				}
+				if(llave!=0){
+					// Has conseguido la llave ##
+					heroe.getBolsa().getLlave().setNivel(llave);
+				}
+
+			} else {
 
 			}
 		}
+		return heroe;
 	}
-*/
+
 }

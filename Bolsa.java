@@ -7,9 +7,11 @@ public class Bolsa{
 	private Accesorio accesorio;
 	private Llave llave;
 	private Pocion[] pociones;
+	private int numeroPociones;
 
 	public Bolsa() {
 		pociones = new Pocion[5];
+		numeroPociones = 0;
 		this.arma = new Arma(true);
 		this.casco = new Casco(true);
 		this.botas = new Botas(true);

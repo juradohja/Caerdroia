@@ -30,7 +30,6 @@ public class Personaje{
 		this.resistencia = nivel;
 		this.inteligencia = nivel;
 		this.iniciativa = nivel;
-		this.maxVida = vida;
 	}
 
 	public Personaje(int nivel){
@@ -41,7 +40,6 @@ public class Personaje{
 		this.resistencia = nivel;
 		this.inteligencia = nivel;
 		this.iniciativa = nivel;
-		this.maxVida = vida;
 	}
 
 	public String getNombre() {

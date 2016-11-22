@@ -3,6 +3,7 @@ public class Alquimista extends Personaje{
 	public Alquimista(String nombre, int nivel){
 		super(nombre, nivel);
 		vida = vida*85;
+		maxVida = vida;
 		fuerza = fuerza*10;
 		magia = magia*12;
 		resistencia = resistencia*4;
@@ -15,6 +16,7 @@ public class Alquimista extends Personaje{
 	public Alquimista(int nivel){
 		super(nivel);
 		vida = vida*85;
+		maxVida = vida;
 		fuerza = fuerza*10;
 		magia = magia*12;
 		resistencia = resistencia*4;

@@ -3,6 +3,7 @@ public class Cazador extends Personaje{
 	public Cazador(String nombre, int nivel){
 		super(nombre, nivel);
 		vida = vida*65;
+		maxVida = vida;
 		fuerza = fuerza*16;
 		magia = magia*7;
 		resistencia = resistencia*4;
@@ -15,6 +16,7 @@ public class Cazador extends Personaje{
 	public Cazador(int nivel){
 		super(nivel);
 		vida = vida*65;
+		maxVida = vida;
 		fuerza = fuerza*16;
 		magia = magia*7;
 		resistencia = resistencia*4;

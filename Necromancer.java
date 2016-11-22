@@ -3,6 +3,7 @@ public class Necromancer extends Personaje{
 	public Necromancer(String nombre, int nivel){
 		super(nombre, nivel);
 		vida = vida*75;
+		maxVida = vida;
 		fuerza = fuerza*7;
 		magia = magia*16;
 		resistencia = resistencia*3;
@@ -15,6 +16,7 @@ public class Necromancer extends Personaje{
 	public Necromancer(int nivel){
 		super(nivel);
 		vida = vida*75;
+		maxVida = vida;
 		fuerza = fuerza*7;
 		magia = magia*16;
 		resistencia = resistencia*3;

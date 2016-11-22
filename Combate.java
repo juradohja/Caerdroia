@@ -41,8 +41,7 @@ public class Combate{
 		heroe.setVida(heroe.getVida-(enemigo.getFuerza()+enemigo.getMagia()-enemigo.getResistencia()-enemigo.getInteligencia()));
 	}
 */
-	public boolean entrarEnCombate(){
-		boolean heroIsAlive=true;
+	public Personaje entrarEnCombate(){
 		boolean turnoHeroe=true;
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
@@ -111,12 +110,6 @@ public class Combate{
 			turnoHeroe=!turnoHeroe;
 			turnoEnemigo=!turnoEnemigo;
 		}
-		if(heroe.getVida()>0){
-			heroIsAlive=true;
-			heroe.setVida(heroe.getMaxVida());
-		} else {
-			heroIsAlive=false;
-		}
-		return heroIsAlive;
+		return heroe;
 	}
 }
