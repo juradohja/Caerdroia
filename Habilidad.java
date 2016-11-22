@@ -1,7 +1,7 @@
 public class Habilidad{
-	private nombre;
-	private fuerza;
-	private magia;
+	private String nombre;
+	private int fuerza;
+	private int magia;
 
 	public Habilidad(String nombre, int fuerza, int magia){
 		this.nombre = nombre;
