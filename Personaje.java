@@ -8,6 +8,7 @@ public class Personaje{
 	
 	protected String nombre;
 	protected int vida;
+	protected int maxVida;
 	protected int fuerza;
 	protected int magia;
 	protected int resistencia;
@@ -30,6 +31,7 @@ public class Personaje{
 		this.resistencia = nivel;
 		this.inteligencia = nivel;
 		this.iniciativa = nivel;
+		this.maxVida = vida;
 	}
 
 	public Personaje(int nivel){
@@ -40,6 +42,7 @@ public class Personaje{
 		this.resistencia = nivel;
 		this.inteligencia = nivel;
 		this.iniciativa = nivel;
+		this.maxVida = vida;
 	}
 
 	public String getNombre() {
@@ -101,5 +104,17 @@ public class Personaje{
 	}
 	public void setBolsa(Bolsa bolsa) {
 		this.bolsa = bolsa;
+	}
+	public Habilidad getHFisica(){
+		return hFisica;
+	}
+	public Habilidad getHMagica(){
+		return hMagica;
+	}
+	public int getMaxVida(){
+		return maxVida;
+	}
+	public void setMaxVida(int maxVida){
+		this.maxVida = maxVida;
 	}
 }
