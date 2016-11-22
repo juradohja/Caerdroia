@@ -4,6 +4,7 @@
 // 2 - Abierto
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class Camara{
 
@@ -35,7 +36,7 @@ public class Camara{
 		this.acertijo = acertijo;
 		this.respuesta = respuesta;
 		this.nivel = nivel;
-		if(nivel=1){
+		if(nivel==1){
 			entered = true;
 		} else {
 			entered = false;
@@ -195,12 +196,22 @@ public class Camara{
 		Personaje afterHeroe = heroe;
 		if(!entered){
 			// Mostrar acertijo
-			// Recibir respuesta
-			String res=""; //input
+			String res = JOptionPane.showInputDialog(acertijo);
 			if(res.equals(respuesta)){
 				// Felicidades
+				JOptionPane.showMessageDialog(null, "Felicidades! Has acertado");
+				afterHeroe.setFuerza(heroe.getFuerza()+random.nextInt(8));
+				afterHeroe.setMagia(heroe.getMagia()+random.nextInt(8));
+				afterHeroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
+				afterHeroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
+				afterHeroe.setMaxVida(heroe.getMaxVida()+random.nextInt(16));
+				afterHeroe.setVida(heroe.getMaxVida());
+				entered = true;
+				return afterHeroe;
 			} else {
 				// Respuesta incorrecta
+
+				JOptionPane.showMessageDialog(null, "Tas tonto");
 				afterHeroe = iniciarCombate(heroe, enemigo);
 			}
 			if(afterHeroe.getVida()>0){
