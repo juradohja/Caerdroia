@@ -9,9 +9,9 @@ public class Peto extends Equipo{
 	public Peto(boolean starter){
 		super(starter);
 		if(starter){
-			setAttributes(0);
+			setAttributes(4);
 		} else {
-			setAttributes(random.nextInt(3)); // número de armas que hay
+			setAttributes(random.nextInt(4)); // número de armas que hay
 		}
 	}
 
@@ -40,6 +40,11 @@ public class Peto extends Equipo{
 			resistencia= 20;
 			inteligencia= 20;
 			break;
+			
+			case 4:
+			nombre= "Ropa Casual";
+			resistencia= 5;
+			inteligencia= 5;
 		}
 	}
 
