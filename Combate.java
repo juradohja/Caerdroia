@@ -42,11 +42,7 @@ public class Combate{
 	}
 */
 	public boolean entrarEnCombate(){
-<<<<<<< HEAD
-		boolean heroeIsAlive=true;
-=======
 		boolean heroIsAlive=true;
->>>>>>> ae44dc5c3b0d11a560711ce2c851712fa6920a84
 		boolean turnoHeroe=true;
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
@@ -121,10 +117,6 @@ public class Combate{
 		} else {
 			heroIsAlive=false;
 		}
-<<<<<<< HEAD
-		return heroeIsAlive;
-=======
 		return heroIsAlive;
->>>>>>> ae44dc5c3b0d11a560711ce2c851712fa6920a84
 	}
 }
