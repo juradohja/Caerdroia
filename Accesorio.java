@@ -1,35 +1,75 @@
-public class Accesorio{
-	private String nombre;
-	private int modfuerza;
-	private int modmagia;
-	private int modresistencia;
-	private int modinteligencia;
+import java.io.Serializable;
+import java.util.Random;
 
-	Accesorio(String nombre, int modfuerza, int modprotected , int modresistencia, int modinteligencia){
-		this.nombre=nombre;
-		this.modfuerza=modfuerza;
-		this.modmagia=modmagia;
-		this.modresistencia=modresistencia;
-		this.modinteligencia=modinteligencia;
+public class Accesorio extends Equipo implements Serializable{
+/*
+	public Accesorio(String nombre, int fuerza, int magia, int resistencia, int inteligencia){
+		super(nombre, fuerza, magia, resistencia, inteligencia);
+	}
+*/
+	public Accesorio(boolean starter){
+		super(starter);
+		if(starter){
+			setAttributes(12);
+		} else {
+			setAttributes(random.nextInt(12)); // número de armas que hay
+		}
 	}
 
-	public String getNombre(){
-		return nombre;
+	protected void setAttributes(int tipo){
+		switch(tipo){
+			case 0: // CAMBIAR CASO CERO A STARTER
+			nombre = "Anillo del Rey";
+			break;
+
+			case 1:
+			nombre = "Anillo de Boda";
+			break;
+
+			case 2:
+			nombre = "Collar de Gemas";
+			break;
+
+			case 3:
+			nombre = "Moneda";
+			break;
+
+			case 4:
+			nombre = "Alma Perdida";
+			break;
+
+			case 5:
+			nombre = "Pulsera de Goma";
+			break;
+
+			case 6:
+			nombre = "Hada en Botella";
+			break;
+
+			case 7:
+			nombre = "Espejo Maldito";
+			break;
+
+			case 8:
+			nombre = "Foto de Gatito";
+			break;
+
+			case 9:
+			nombre = "Cuerno de Demonio";
+			break;
+
+			case 10:
+			nombre = "Libro de Magia";
+			break;
+
+			case 11:
+			nombre = "Vitamina";
+			break;
+
+			case 12:
+			nombre = "Pelusa";
+			break;
+		}
 	}
 
-	public int getModfuerza(){
-		return modfuerza;
-	}
-
-	public int getModmagia(){
-		return modmagia;
-	}
-
-	public int getModresistencia(){
-		return modresistencia;
-	}
-
-	public int getModinteligencia(){
-		return modinteligencia;
-	}
 }

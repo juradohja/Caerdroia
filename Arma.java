@@ -1,23 +1,96 @@
-public class Arma{
-	private String nombre;
-	private int fuerza;
-	private int magia;
+import java.io.Serializable;
+import java.util.Random; // implementar random para todos
 
-	Arma(String nombre, int fuerza, int magia){
-		this.nombre=nombre;
-		this.fuerza=fuerza;
-		this.magia=magia;
+public class Arma extends Equipo implements Serializable{
+
+	public Arma(boolean starter){
+		super(starter);
+		if(starter){
+			setAttributes(12);
+		} else {
+			setAttributes(random.nextInt(12)); // número de armas que hay
+		}
 	}
 
-	public String getNombre(){
-		return nombre;
-	}
+	protected void setAttributes(int tipo){
+		switch(tipo){
+			case 0: // CAMBIAR CASO CERO A STARTER
+			nombre = "Espada Gigante";
+			fuerza= 70;
+			magia= 0;
+			break;
 
-	public int getFuerza(){
-		return fuerza;
-	}
+			case 1:
+			nombre = "Mazo";
+			fuerza= 20;
+			magia= 0;
+			break;
 
-	public int getMagia(){
-		return magia;
+			case 2:
+			nombre = "Hacha Pesada";
+			fuerza= 35;
+			magia= 0;
+			break;
+
+			case 3:
+			nombre = "Cuchilla Maldita";
+			fuerza= 100;
+			magia= 0;
+			break;
+
+			case 4:
+			nombre = "Tenedor";
+			fuerza= 5;
+			magia= 0;
+			break;
+
+			case 5:
+			nombre = "Katana";
+			fuerza= 50;
+			magia= 0;
+			break;
+
+			case 6:
+			nombre = "Tridente de Hielo";
+			magia= 35;
+			fuerza= 0;
+			break;
+
+			case 7:
+			nombre = "Cetro Oscuro";
+			magia= 70;
+			fuerza= 0;
+			break;
+
+			case 8:
+			nombre = "Orbe";
+			magia= 50;
+			fuerza= 0;
+			break;
+
+			case 9:
+			nombre = "Palito";
+			magia= 5;
+			fuerza= 0;
+			break;
+
+			case 10:
+			nombre = "Baculo";
+			magia= 20;
+			fuerza= 0;
+			break;
+
+			case 11:
+			nombre = "Motosierra";
+			magia= 100;
+			fuerza= 0;
+			break;
+				
+			case 12:
+			nombre = "Tuberia";
+			magia= 5;
+			fuerza= 5;
+			break;
+		}
 	}
 }
