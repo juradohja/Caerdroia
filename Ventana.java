@@ -10,7 +10,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	private MatteBorder border;
 	private JPanel botones, mapa, datos, info;
 	private JButton up, down, left, right;
-	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, iniciativa, experiencia, nivel, bolsa, informacion, arma, casco, botas, peto, accesorio, llave;
+	private JLabel nombre, vida, fuerza, magia, resistencia, inteligencia, nivel, bolsa, informacion, arma, casco, botas, peto, accesorio, llave;
 	private Mapa m;
 
 	public Ventana(Mapa m){
@@ -37,7 +37,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 		drawMap(mapa);
 		add(mapa);
 		datos = new JPanel();
-		datos.setLayout(new GridLayout(8,2));
+		datos.setLayout(new GridLayout(7,2));
 		drawInfo(datos);
 		add(datos);
 		botones = new JPanel();
@@ -67,13 +67,11 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 
 	public void drawInfo(JPanel datos){
 		nombre = new JLabel("Nombre: "+m.getHeroe().getNombre());
-		vida = new JLabel("Vida: "+m.getHeroe().getVida()+"/"+m.getHeroe().getMaxVida());
+		vida = new JLabel("Vida: "+m.getHeroe().getMaxVida());
 		fuerza = new JLabel("Fuerza: "+m.getHeroe().getFuerza());
 		magia = new JLabel("Magia: "+m.getHeroe().getMagia());
 		resistencia = new JLabel("Resistencia: "+m.getHeroe().getResistencia());
 		inteligencia = new JLabel("Inteligencia: "+m.getHeroe().getInteligencia());
-		iniciativa = new JLabel("Iniciativa: "+m.getHeroe().getIniciativa());
-		experiencia = new JLabel("Experiencia: "+m.getHeroe().getExperiencia());
 		bolsa = new JLabel("Bolsa: ");		
 		nivel = new JLabel("Nivel: "+m.getHeroe().getNivel());
 		arma = new JLabel("Arma: "+m.getHeroe().getBolsa().getArma().getNombre());
@@ -88,8 +86,6 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 		datos.add(magia);
 		datos.add(resistencia);
 		datos.add(inteligencia);
-		datos.add(iniciativa);
-		datos.add(experiencia);
 		datos.add(bolsa);
 		datos.add(nivel);
 		datos.add(arma);
