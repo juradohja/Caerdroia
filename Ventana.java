@@ -20,6 +20,7 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 		setTitle("Caerdroia");
 		setSize(2000,2000);
 		setLayout(new GridLayout(2,2));
+		setUIFont (new javax.swing.plaf.FontUIResource("Arial",Font.PLAIN,35));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		initComponents();
 		addWindowListener(new java.awt.event.WindowAdapter() {
@@ -135,6 +136,16 @@ public class Ventana extends JFrame implements ActionListener, Serializable{
 	 	}
 	 	return 0;
 	 }
+
+	 	public static void setUIFont (javax.swing.plaf.FontUIResource f){
+    java.util.Enumeration keys = UIManager.getDefaults().keys();
+    while (keys.hasMoreElements()) {
+    	Object key = keys.nextElement();
+        Object value = UIManager.get (key);
+        if (value != null && value instanceof javax.swing.plaf.FontUIResource)
+        	UIManager.put (key, f);
+      	}
+    }
 
 	  public void actionPerformed(ActionEvent e){
 	 	String wall = e.getActionCommand();
