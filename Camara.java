@@ -170,6 +170,7 @@ public class Camara{
 
 	public boolean iniciarCombate(Personaje heroe, Personaje enemigo){
 		Combate combate = new Combate(heroe, enemigo);
-		boolean heroeIsAlive = combate.entrarEnCombate();
-	}
+    	boolean heroIsAlive = combate.entrarEnCombate();
+  		return heroIsAlive;
+ 	}
 }

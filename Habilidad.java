@@ -5,8 +5,8 @@ public class Habilidad{
 
 	public Habilidad(String nombre, int fuerza, int magia){
 		this.nombre = nombre;
-		this.fuerza = nivel;
-		this.magia = nivel;
+		this.fuerza = fuerza;
+		this.magia = magia;
 	}
 
 	public String getNombre() {

@@ -38,7 +38,7 @@ public class Combate{
 	}
 */
 	public boolean entrarEnCombate(){
-		boolean heroeIsAlive;
+		boolean heroeIsAlive=true;
 		boolean turnoHeroe=true;
 		boolean turnoEnemigo=false;
 		while(heroe.getVida() > 0 && enemigo.getVida() > 0){
@@ -51,5 +51,6 @@ public class Combate{
 					// Curar
 			}
 		}
+		return heroeIsAlive;
 	}
 }
