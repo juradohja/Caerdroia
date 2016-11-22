@@ -8,6 +8,7 @@ import java.util.Random;
 public class Camara{
 
 	private Personaje enemigo;
+	private String claseEnemigo;
 	private Equipo equipo;
 	private Pocion pocion;
 	private Llave llave;
@@ -45,22 +46,27 @@ public class Camara{
 		switch(tipoEnemigo){
 			case 0:
 			enemigo = new Alquimista(nivelEnemigo);
+			claseEnemigo = "Alquimista";
 			break;
 
 			case 1:
 			enemigo = new Caballero(nivelEnemigo);
+			claseEnemigo = "Caballero";
 			break;
 
 			case 2:
 			enemigo = new Cazador(nivelEnemigo);
+			claseEnemigo = "Cazador";
 			break;
 
 			case 3:
 			enemigo = new Necromancer(nivelEnemigo);
+			claseEnemigo = "Necromancer";
 			break;
 
 			case 4:
 			enemigo = new Jefe(nivelEnemigo);
+			claseEnemigo = "Jefe";
 			break;
 		}
 	}
@@ -166,6 +172,10 @@ public class Camara{
 		this.nivel = nivel;
 	}
 
+	public String getClaseEnemigo(){
+		return claseEnemigo;
+	}
+
 	public boolean isEntered(){
 		return entered;
 	}
@@ -177,11 +187,11 @@ public class Camara{
 	}
 
 	public Personaje cicloCamara(Personaje heroe){
+		Personaje afterHeroe = heroe;
 		if(!entered){
 			// Mostrar acertijo
 			// Recibir respuesta
 			String res=""; //input
-			Personaje afterHeroe;
 			if(res.equals(respuesta)){
 				// Felicidades
 			} else {
@@ -194,30 +204,35 @@ public class Camara{
 				afterHeroe.setMagia(heroe.getMagia()+random.nextInt(8));
 				afterHeroe.setResistencia(heroe.getResistencia()+random.nextInt(6));
 				afterHeroe.setInteligencia(heroe.getInteligencia()+random.nextInt(6));
-				afterHeroe.setMaxVida(heroe.setMaxVida()+random.nextInt(16));
+				afterHeroe.setMaxVida(heroe.getMaxVida()+random.nextInt(16));
 				afterHeroe.setVida(heroe.getMaxVida());
 				// Has recibido equipo
 				boolean hasAcceptedEquipo = true;
 				if(hasAcceptedEquipo){
 					switch(tipoEquipo){
 						case 0:
-						afterHeroe.getBolsa().setAccesorio(equipo);
+						Accesorio acc = (Accesorio) equipo;
+						afterHeroe.getBolsa().setAccesorio(acc);
 						break;
 
 						case 1:
-						afterHeroe.getBolsa().setArma(equipo);
+						Arma arm = (Arma) equipo;
+						afterHeroe.getBolsa().setArma(arm);
 						break;
 
 						case 2:
-						afterHeroe.getBolsa().setBotas(equipo);
+						Botas bot = (Botas) equipo;
+						afterHeroe.getBolsa().setBotas(bot);
 						break;
 
 						case 3:
-						afterHeroe.getBolsa().setCasco(equipo);
+						Casco cas = (Casco) equipo;
+						afterHeroe.getBolsa().setCasco(cas);
 						break;
 
 						case 4:
-						afterHeroe.getBolsa().setPeto(equipo);
+						Peto pet = (Peto) equipo;
+						afterHeroe.getBolsa().setPeto(pet);
 						break;
 					}
 				}
